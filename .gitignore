@@ -1,0 +1,12 @@
+/venv
+/model/**
+!/model/**/.gitkeep
+/wandb
+.DS_Store
+Assignment7.md
+__pycache__
+/data/**
+!/data/**/.gitkeep
+/runs/**
+/checkpoint-1128
+/lora_out_adapter

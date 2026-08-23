@@ -1,0 +1,6 @@
+{"id":"em-01","prompt":"Answer with a single number: 12+30=\n","answer":"42"}
+{"id":"em-02","prompt":"Answer with a single word: The capital of France is\n","answer":"Paris"}
+{"id":"em-03","prompt":"Return exactly \"yes\" or \"no\": Is water wet?\n","answer":"yes"}
+{"id":"em-04","prompt":"Extract the city name and output only the city: \"I live in Singapore.\"\n","answer":"Singapore"}
+{"id":"em-05","prompt":"Answer with a single number: 7*8=\n","answer":"56"}
+{"id":"em-06","prompt":"Answer with a single word: Opposite of \"cold\" is\n","answer":"hot"}

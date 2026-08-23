@@ -1,0 +1,6 @@
+{"id":"smoke-01","prompt":"Write a one-sentence summary of the following text: \"Deep learning has transformed many areas of AI.\""}
+{"id":"smoke-02","prompt":"Translate to Traditional Chinese: \"Machine learning is useful.\""}
+{"id":"smoke-03","prompt":"Answer briefly: What is 2+3?"}
+{"id":"smoke-04","prompt":"Give two bullet points about why unit tests are helpful."}
+{"id":"smoke-05","prompt":"Return a JSON object with keys \"a\" and \"b\" where a=1 and b=2.\n\nJSON:"}
+{"id":"smoke-06","prompt":"### Instruction:\nExtract the city from the sentence.\n\n### Context:\n\"I live in Singapore.\"\n\n### Response:\n"}

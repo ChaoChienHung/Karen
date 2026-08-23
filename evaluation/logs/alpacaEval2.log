@@ -1,0 +1,1117 @@
+Virtual env activated
+`trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'tatsu-lab/alpaca_eval' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+Using the latest cached version of the dataset since tatsu-lab/alpaca_eval couldn't be found on the Hugging Face Hub
+Found the latest cached dataset configuration 'alpaca_eval_gpt4_baseline' at /home/c/chaoch/.cache/huggingface/datasets/tatsu-lab___alpaca_eval/alpaca_eval_gpt4_baseline/1.0.0/fdcff3f5cd45479ce263af403019ce2bd359bf0550cfe0e8eadd25972c809574 (last modified on Wed Oct 29 02:53:36 2025).
+INFO:root:cannot use `chunksize` with max_instances. Setting `chunksize` to None.
+Chunking for generation:   0%|          | 0/1 [00:00<?, ?it/s]INFO:root:Using `huggingface_local_completions` on 200 prompts using /home/c/chaoch/Fine-TunedLLaMa/cache/model/lora_llama_7b.
+`torch_dtype` is deprecated! Use `dtype` instead!
+INFO:accelerate.utils.modeling:We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s][A
+Loading checkpoint shards:  33%|███▎      | 1/3 [00:09<00:18,  9.11s/it][A
+Loading checkpoint shards:  67%|██████▋   | 2/3 [00:18<00:09,  9.11s/it][A
+Loading checkpoint shards: 100%|██████████| 3/3 [00:25<00:00,  8.23s/it][ALoading checkpoint shards: 100%|██████████| 3/3 [00:25<00:00,  8.47s/it]
+INFO:root:Model memory: 13.476831488 GB
+INFO:root:Kwargs to completion: {'do_sample': True, 'model_kwargs': {'torch_dtype': torch.float16, 'device_map': 'auto'}, 'batch_size': 1, 'max_new_tokens': 1024, 'temperature': 0.7, 'top_p': 0.9}
+`torch_dtype` is deprecated! Use `dtype` instead!
+Device set to use cuda:0
+
+  0%|          | 0/200 [00:00<?, ?it/s][A
+  0%|          | 1/200 [00:16<55:31, 16.74s/it][A
+  1%|          | 2/200 [00:32<53:23, 16.18s/it][A
+  2%|▏         | 3/200 [00:48<52:35, 16.02s/it][A
+  2%|▏         | 4/200 [01:04<52:11, 15.98s/it][A
+  2%|▎         | 5/200 [01:20<51:51, 15.95s/it][A
+  3%|▎         | 6/200 [01:36<51:29, 15.93s/it][A
+  4%|▎         | 7/200 [01:51<51:10, 15.91s/it][A
+  4%|▍         | 8/200 [02:07<50:54, 15.91s/it][A
+  4%|▍         | 9/200 [02:23<50:38, 15.91s/it][A
+  5%|▌         | 10/200 [02:39<50:19, 15.89s/it][A
+  6%|▌         | 11/200 [02:55<50:00, 15.88s/it][A
+  6%|▌         | 12/200 [03:11<49:44, 15.87s/it][A
+  6%|▋         | 13/200 [03:27<49:33, 15.90s/it][A
+  7%|▋         | 14/200 [03:43<49:14, 15.89s/it][A
+  8%|▊         | 15/200 [03:59<49:00, 15.90s/it][A
+  8%|▊         | 16/200 [04:14<48:45, 15.90s/it][A
+  8%|▊         | 17/200 [04:30<48:32, 15.92s/it][A
+  9%|▉         | 18/200 [04:46<48:17, 15.92s/it][A
+ 10%|▉         | 19/200 [05:02<48:03, 15.93s/it][A
+ 10%|█         | 20/200 [05:18<47:48, 15.93s/it][A
+ 10%|█         | 21/200 [05:34<47:33, 15.94s/it][A
+ 11%|█         | 22/200 [05:50<47:15, 15.93s/it][A
+ 12%|█▏        | 23/200 [06:06<46:55, 15.91s/it][A
+ 12%|█▏        | 24/200 [06:22<46:39, 15.90s/it][A
+ 12%|█▎        | 25/200 [06:38<46:19, 15.88s/it][A
+ 13%|█▎        | 26/200 [06:54<46:07, 15.90s/it][A
+ 14%|█▎        | 27/200 [07:10<45:52, 15.91s/it][A
+ 14%|█▍        | 28/200 [07:25<45:33, 15.90s/it][A
+ 14%|█▍        | 29/200 [07:41<45:22, 15.92s/it][A
+ 15%|█▌        | 30/200 [07:57<45:06, 15.92s/it][A
+ 16%|█▌        | 31/200 [08:13<44:49, 15.91s/it][A
+ 16%|█▌        | 32/200 [08:29<44:35, 15.92s/it][A
+ 16%|█▋        | 33/200 [08:45<44:19, 15.92s/it][A
+ 17%|█▋        | 34/200 [09:01<44:02, 15.92s/it][A
+ 18%|█▊        | 35/200 [09:17<43:42, 15.90s/it][A
+ 18%|█▊        | 36/200 [09:33<43:22, 15.87s/it][A
+ 18%|█▊        | 37/200 [09:48<43:04, 15.86s/it][A
+ 19%|█▉        | 38/200 [10:04<42:53, 15.88s/it][A
+ 20%|█▉        | 39/200 [10:20<42:41, 15.91s/it][A
+ 20%|██        | 40/200 [10:36<42:24, 15.90s/it][A
+ 20%|██        | 41/200 [10:52<42:06, 15.89s/it][A
+ 21%|██        | 42/200 [11:08<41:49, 15.88s/it][A
+ 22%|██▏       | 43/200 [11:24<41:32, 15.88s/it][A
+ 22%|██▏       | 44/200 [11:40<41:17, 15.88s/it][A
+ 22%|██▎       | 45/200 [11:56<41:06, 15.91s/it][A
+ 23%|██▎       | 46/200 [12:12<40:51, 15.92s/it][A
+ 24%|██▎       | 47/200 [12:28<40:35, 15.92s/it][A
+ 24%|██▍       | 48/200 [12:44<40:22, 15.94s/it][A
+ 24%|██▍       | 49/200 [12:59<40:04, 15.93s/it][A
+ 25%|██▌       | 50/200 [13:15<39:51, 15.94s/it][A
+ 26%|██▌       | 51/200 [13:31<39:33, 15.93s/it][A
+ 26%|██▌       | 52/200 [13:47<39:14, 15.91s/it][A
+ 26%|██▋       | 53/200 [14:03<39:00, 15.93s/it][A
+ 27%|██▋       | 54/200 [14:19<38:46, 15.94s/it][A
+ 28%|██▊       | 55/200 [14:35<38:29, 15.93s/it][A
+ 28%|██▊       | 56/200 [14:51<38:14, 15.93s/it][A
+ 28%|██▊       | 57/200 [15:07<37:58, 15.93s/it][A
+ 29%|██▉       | 58/200 [15:23<37:38, 15.90s/it][A
+ 30%|██▉       | 59/200 [15:39<37:21, 15.89s/it][A
+ 30%|███       | 60/200 [15:54<37:03, 15.88s/it][A
+ 30%|███       | 61/200 [16:10<36:47, 15.88s/it][A
+ 31%|███       | 62/200 [16:26<36:31, 15.88s/it][A
+ 32%|███▏      | 63/200 [16:42<36:18, 15.90s/it][A
+ 32%|███▏      | 64/200 [16:58<36:01, 15.89s/it][A
+ 32%|███▎      | 65/200 [17:14<35:47, 15.91s/it][A
+ 33%|███▎      | 66/200 [17:30<35:28, 15.89s/it][A
+ 34%|███▎      | 67/200 [17:46<35:14, 15.90s/it][A
+ 34%|███▍      | 68/200 [18:02<34:59, 15.90s/it][A
+ 34%|███▍      | 69/200 [18:18<34:44, 15.91s/it][A
+ 35%|███▌      | 70/200 [18:33<34:25, 15.89s/it][A
+ 36%|███▌      | 71/200 [18:49<34:07, 15.87s/it][A
+ 36%|███▌      | 72/200 [19:05<33:51, 15.87s/it][A
+ 36%|███▋      | 73/200 [19:21<33:34, 15.87s/it][A
+ 37%|███▋      | 74/200 [19:37<33:18, 15.86s/it][A
+ 38%|███▊      | 75/200 [19:53<33:02, 15.86s/it][A
+ 38%|███▊      | 76/200 [20:09<32:48, 15.87s/it][A
+ 38%|███▊      | 77/200 [20:25<32:33, 15.89s/it][A
+ 39%|███▉      | 78/200 [20:41<32:23, 15.93s/it][A
+ 40%|███▉      | 79/200 [20:57<32:08, 15.94s/it][A
+ 40%|████      | 80/200 [21:13<31:56, 15.97s/it][A
+ 40%|████      | 81/200 [21:29<31:41, 15.98s/it][A
+ 41%|████      | 82/200 [21:45<31:25, 15.98s/it][A
+ 42%|████▏     | 83/200 [22:01<31:09, 15.98s/it][A
+ 42%|████▏     | 84/200 [22:16<30:53, 15.98s/it][A
+ 42%|████▎     | 85/200 [22:32<30:34, 15.95s/it][A
+ 43%|████▎     | 86/200 [22:48<30:16, 15.94s/it][A
+ 44%|████▎     | 87/200 [23:04<29:58, 15.92s/it][A
+ 44%|████▍     | 88/200 [23:20<29:45, 15.95s/it][A
+ 44%|████▍     | 89/200 [23:36<29:29, 15.94s/it][A
+ 45%|████▌     | 90/200 [23:52<29:13, 15.94s/it][A
+ 46%|████▌     | 91/200 [24:08<28:55, 15.92s/it][A
+ 46%|████▌     | 92/200 [24:24<28:36, 15.89s/it][A
+ 46%|████▋     | 93/200 [24:40<28:20, 15.89s/it][A
+ 47%|████▋     | 94/200 [24:56<28:04, 15.89s/it][A
+ 48%|████▊     | 95/200 [25:11<27:47, 15.88s/it][A
+ 48%|████▊     | 96/200 [25:27<27:32, 15.89s/it][A
+ 48%|████▊     | 97/200 [25:43<27:15, 15.88s/it][A
+ 49%|████▉     | 98/200 [25:59<26:58, 15.87s/it][A
+ 50%|████▉     | 99/200 [26:15<26:42, 15.87s/it][A
+ 50%|█████     | 100/200 [26:31<26:27, 15.88s/it][A
+ 50%|█████     | 101/200 [26:47<26:11, 15.87s/it][A
+ 51%|█████     | 102/200 [27:03<25:56, 15.89s/it][A
+ 52%|█████▏    | 103/200 [27:18<25:40, 15.88s/it][A
+ 52%|█████▏    | 104/200 [27:34<25:25, 15.89s/it][A
+ 52%|█████▎    | 105/200 [27:50<25:09, 15.89s/it][A
+ 53%|█████▎    | 106/200 [28:06<24:55, 15.91s/it][A
+ 54%|█████▎    | 107/200 [28:22<24:39, 15.91s/it][A
+ 54%|█████▍    | 108/200 [28:38<24:24, 15.92s/it][A
+ 55%|█████▍    | 109/200 [28:54<24:09, 15.93s/it][A
+ 55%|█████▌    | 110/200 [29:10<23:53, 15.93s/it][A
+ 56%|█████▌    | 111/200 [29:26<23:36, 15.92s/it][A
+ 56%|█████▌    | 112/200 [29:42<23:22, 15.93s/it][A
+ 56%|█████▋    | 113/200 [29:58<23:08, 15.96s/it][A
+ 57%|█████▋    | 114/200 [30:14<22:52, 15.96s/it][A
+ 57%|█████▊    | 115/200 [30:30<22:37, 15.97s/it][A
+ 58%|█████▊    | 116/200 [30:46<22:21, 15.97s/it][A
+ 58%|█████▊    | 117/200 [31:02<22:04, 15.96s/it][A
+ 59%|█████▉    | 118/200 [31:18<21:49, 15.96s/it][A
+ 60%|█████▉    | 119/200 [31:33<21:29, 15.92s/it][A
+ 60%|██████    | 120/200 [31:49<21:14, 15.93s/it][A
+ 60%|██████    | 121/200 [32:05<20:58, 15.94s/it][A
+ 61%|██████    | 122/200 [32:21<20:41, 15.92s/it][A
+ 62%|██████▏   | 123/200 [32:37<20:26, 15.93s/it][A
+ 62%|██████▏   | 124/200 [32:53<20:09, 15.92s/it][A
+ 62%|██████▎   | 125/200 [33:09<19:53, 15.91s/it][A
+ 63%|██████▎   | 126/200 [33:25<19:38, 15.93s/it][A
+ 64%|██████▎   | 127/200 [33:41<19:21, 15.91s/it][A
+ 64%|██████▍   | 128/200 [33:57<19:04, 15.90s/it][A
+ 64%|██████▍   | 129/200 [34:13<18:48, 15.89s/it][A
+ 65%|██████▌   | 130/200 [34:28<18:31, 15.88s/it][A
+ 66%|██████▌   | 131/200 [34:44<18:15, 15.88s/it][A
+ 66%|██████▌   | 132/200 [35:00<18:00, 15.88s/it][A
+ 66%|██████▋   | 133/200 [35:16<17:45, 15.91s/it][A
+ 67%|██████▋   | 134/200 [35:32<17:31, 15.93s/it][A
+ 68%|██████▊   | 135/200 [35:48<17:16, 15.95s/it][A
+ 68%|██████▊   | 136/200 [36:04<17:01, 15.96s/it][A
+ 68%|██████▊   | 137/200 [36:20<16:43, 15.94s/it][A
+ 69%|██████▉   | 138/200 [36:36<16:27, 15.92s/it][A
+ 70%|██████▉   | 139/200 [36:52<16:11, 15.92s/it][A
+ 70%|███████   | 140/200 [37:08<15:56, 15.94s/it][A
+ 70%|███████   | 141/200 [37:24<15:40, 15.94s/it][A
+ 71%|███████   | 142/200 [37:40<15:25, 15.95s/it][A
+ 72%|███████▏  | 143/200 [37:56<15:09, 15.95s/it][A
+ 72%|███████▏  | 144/200 [38:11<14:52, 15.93s/it][A
+ 72%|███████▎  | 145/200 [38:27<14:35, 15.93s/it][A
+ 73%|███████▎  | 146/200 [38:43<14:20, 15.93s/it][A
+ 74%|███████▎  | 147/200 [38:59<14:04, 15.94s/it][A
+ 74%|███████▍  | 148/200 [39:15<13:47, 15.92s/it][A
+ 74%|███████▍  | 149/200 [39:31<13:32, 15.93s/it][A
+ 75%|███████▌  | 150/200 [39:47<13:16, 15.92s/it][A
+ 76%|███████▌  | 151/200 [40:03<12:59, 15.90s/it][A
+ 76%|███████▌  | 152/200 [40:19<12:43, 15.91s/it][A
+ 76%|███████▋  | 153/200 [40:35<12:27, 15.90s/it][A
+ 77%|███████▋  | 154/200 [40:51<12:10, 15.89s/it][A
+ 78%|███████▊  | 155/200 [41:06<11:54, 15.89s/it][A
+ 78%|███████▊  | 156/200 [41:22<11:38, 15.88s/it][A
+ 78%|███████▊  | 157/200 [41:38<11:22, 15.87s/it][A
+ 79%|███████▉  | 158/200 [41:54<11:06, 15.87s/it][A
+ 80%|███████▉  | 159/200 [42:10<10:50, 15.87s/it][A
+ 80%|████████  | 160/200 [42:26<10:35, 15.88s/it][A
+ 80%|████████  | 161/200 [42:42<10:19, 15.88s/it][A
+ 81%|████████  | 162/200 [42:58<10:02, 15.86s/it][A
+ 82%|████████▏ | 163/200 [43:13<09:46, 15.86s/it][A
+ 82%|████████▏ | 164/200 [43:29<09:30, 15.85s/it][A
+ 82%|████████▎ | 165/200 [43:45<09:15, 15.86s/it][A
+ 83%|████████▎ | 166/200 [44:01<09:00, 15.90s/it][A
+ 84%|████████▎ | 167/200 [44:17<08:45, 15.92s/it][A
+ 84%|████████▍ | 168/200 [44:33<08:29, 15.91s/it][A
+ 84%|████████▍ | 169/200 [44:49<08:12, 15.90s/it][A
+ 85%|████████▌ | 170/200 [45:05<07:56, 15.89s/it][A
+ 86%|████████▌ | 171/200 [45:21<07:40, 15.89s/it][A
+ 86%|████████▌ | 172/200 [45:37<07:26, 15.94s/it][A
+ 86%|████████▋ | 173/200 [45:53<07:10, 15.93s/it][A
+ 87%|████████▋ | 174/200 [46:08<06:53, 15.92s/it][A
+ 88%|████████▊ | 175/200 [46:24<06:37, 15.90s/it][A
+ 88%|████████▊ | 176/200 [46:40<06:21, 15.91s/it][A
+ 88%|████████▊ | 177/200 [46:56<06:06, 15.92s/it][A
+ 89%|████████▉ | 178/200 [47:12<05:50, 15.94s/it][A
+ 90%|████████▉ | 179/200 [47:28<05:34, 15.91s/it][A
+ 90%|█████████ | 180/200 [47:44<05:18, 15.90s/it][A
+ 90%|█████████ | 181/200 [48:00<05:02, 15.91s/it][A
+ 91%|█████████ | 182/200 [48:16<04:46, 15.90s/it][A
+ 92%|█████████▏| 183/200 [48:32<04:30, 15.90s/it][A
+ 92%|█████████▏| 184/200 [48:47<04:14, 15.89s/it][A
+ 92%|█████████▎| 185/200 [49:03<03:58, 15.90s/it][A
+ 93%|█████████▎| 186/200 [49:19<03:42, 15.92s/it][A
+ 94%|█████████▎| 187/200 [49:35<03:26, 15.91s/it][A
+ 94%|█████████▍| 188/200 [49:51<03:10, 15.90s/it][A
+ 94%|█████████▍| 189/200 [50:07<02:54, 15.90s/it][A
+ 95%|█████████▌| 190/200 [50:23<02:38, 15.90s/it][A
+ 96%|█████████▌| 191/200 [50:39<02:23, 15.91s/it][A
+ 96%|█████████▌| 192/200 [50:55<02:07, 15.90s/it][A
+ 96%|█████████▋| 193/200 [51:11<01:51, 15.88s/it][A
+ 97%|█████████▋| 194/200 [51:26<01:35, 15.88s/it][A
+ 98%|█████████▊| 195/200 [51:42<01:19, 15.87s/it][A
+ 98%|█████████▊| 196/200 [51:58<01:03, 15.91s/it][A
+ 98%|█████████▊| 197/200 [52:14<00:47, 15.90s/it][A
+ 99%|█████████▉| 198/200 [52:30<00:31, 15.90s/it][A
+100%|█████████▉| 199/200 [52:46<00:15, 15.89s/it][A
+100%|██████████| 200/200 [53:02<00:00, 15.89s/it][A100%|██████████| 200/200 [53:02<00:00, 15.91s/it]
+INFO:root:Time for 200 completions: 3182.3 seconds
+INFO:root:Using `huggingface_local_completions` on 200 prompts using meta-llama/Llama-2-7b-hf.
+INFO:accelerate.utils.modeling:We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s][A
+Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.35s/it][A
+Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.17it/s][ALoading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.08it/s]
+INFO:root:Model memory: 13.476831488 GB
+INFO:root:Kwargs to completion: {'do_sample': True, 'model_kwargs': {'torch_dtype': torch.float16, 'device_map': 'auto'}, 'batch_size': 1, 'max_new_tokens': 1024, 'temperature': 0.7, 'top_p': 1.0}
+Device set to use cuda:0
+
+  0%|          | 0/200 [00:00<?, ?it/s][A
+  0%|          | 1/200 [00:01<06:37,  2.00s/it][A
+  1%|          | 2/200 [00:12<22:46,  6.90s/it][A
+  2%|▏         | 3/200 [00:28<36:03, 10.98s/it][A
+  2%|▏         | 4/200 [00:29<23:00,  7.04s/it][A
+  2%|▎         | 5/200 [00:44<33:09, 10.20s/it][A
+  3%|▎         | 6/200 [01:00<39:07, 12.10s/it][A
+  4%|▎         | 7/200 [01:16<42:52, 13.33s/it][A
+  4%|▍         | 8/200 [01:16<29:14,  9.14s/it][A
+  4%|▍         | 9/200 [01:17<20:52,  6.56s/it][A
+  5%|▌         | 10/200 [01:19<16:15,  5.13s/it][A
+  6%|▌         | 11/200 [01:22<13:46,  4.37s/it][A
+  6%|▌         | 12/200 [01:27<14:04,  4.49s/it][A
+  6%|▋         | 13/200 [01:34<17:14,  5.53s/it][A
+  7%|▋         | 14/200 [01:37<14:39,  4.73s/it][A
+  8%|▊         | 15/200 [01:53<24:52,  8.07s/it][A
+  8%|▊         | 16/200 [01:55<19:10,  6.25s/it][A
+  8%|▊         | 17/200 [02:04<21:12,  6.96s/it][A
+  9%|▉         | 18/200 [02:20<29:11,  9.62s/it][A
+ 10%|▉         | 19/200 [02:35<34:39, 11.49s/it][A
+ 10%|█         | 20/200 [02:42<30:08, 10.05s/it][A
+ 10%|█         | 21/200 [02:58<35:12, 11.80s/it][A
+ 11%|█         | 22/200 [02:58<24:48,  8.36s/it][A
+ 12%|█▏        | 23/200 [02:59<17:39,  5.99s/it][A
+ 12%|█▏        | 24/200 [03:01<14:13,  4.85s/it][A
+ 12%|█▎        | 25/200 [03:03<11:39,  4.00s/it][A
+ 13%|█▎        | 26/200 [03:03<08:31,  2.94s/it][A
+ 14%|█▎        | 27/200 [03:09<10:57,  3.80s/it][A
+ 14%|█▍        | 28/200 [03:10<07:56,  2.77s/it][A
+ 14%|█▍        | 29/200 [03:11<06:46,  2.38s/it][A
+ 15%|█▌        | 30/200 [03:27<18:15,  6.45s/it][A
+ 16%|█▌        | 31/200 [03:31<16:01,  5.69s/it][A
+ 16%|█▌        | 32/200 [03:34<13:34,  4.85s/it][A
+ 16%|█▋        | 33/200 [03:38<12:40,  4.55s/it][A
+ 17%|█▋        | 34/200 [03:39<10:02,  3.63s/it][A
+ 18%|█▊        | 35/200 [03:42<09:18,  3.39s/it][A
+ 18%|█▊        | 36/200 [03:58<19:33,  7.16s/it][A
+ 18%|█▊        | 37/200 [04:14<26:31,  9.76s/it][A
+ 19%|█▉        | 38/200 [04:17<20:45,  7.69s/it][A
+ 20%|█▉        | 39/200 [04:18<15:11,  5.66s/it][A
+ 20%|██        | 40/200 [04:18<10:49,  4.06s/it][A
+ 20%|██        | 41/200 [04:18<07:53,  2.97s/it][A
+ 21%|██        | 42/200 [04:19<06:12,  2.36s/it][A
+ 22%|██▏       | 43/200 [04:23<06:59,  2.67s/it][A
+ 22%|██▏       | 44/200 [04:24<05:58,  2.30s/it][A
+ 23%|██▎       | 46/200 [04:30<06:53,  2.69s/it][A
+ 24%|██▎       | 47/200 [04:32<05:55,  2.32s/it][A
+ 24%|██▍       | 48/200 [04:48<14:52,  5.87s/it][A
+ 24%|██▍       | 49/200 [04:48<11:13,  4.46s/it][A
+ 25%|██▌       | 50/200 [04:53<11:19,  4.53s/it][A
+ 26%|██▌       | 51/200 [04:54<08:39,  3.48s/it][A
+ 26%|██▌       | 52/200 [04:54<06:16,  2.54s/it][A
+ 26%|██▋       | 53/200 [04:56<06:00,  2.45s/it][A
+ 27%|██▋       | 54/200 [05:00<07:06,  2.92s/it][A
+ 28%|██▊       | 55/200 [05:03<06:40,  2.76s/it][A
+ 28%|██▊       | 56/200 [05:18<15:57,  6.65s/it][A
+ 28%|██▊       | 57/200 [05:20<12:03,  5.06s/it][A
+ 29%|██▉       | 58/200 [05:23<10:18,  4.35s/it][A
+ 30%|██▉       | 59/200 [05:38<18:18,  7.79s/it][A
+ 30%|███       | 60/200 [05:39<13:08,  5.63s/it][A
+ 30%|███       | 61/200 [05:45<13:04,  5.65s/it][A
+ 31%|███       | 62/200 [05:49<11:50,  5.15s/it][A
+ 32%|███▏      | 63/200 [05:55<12:35,  5.52s/it][A
+ 32%|███▎      | 65/200 [05:59<08:55,  3.96s/it][A
+ 33%|███▎      | 66/200 [06:01<07:46,  3.48s/it][A
+ 34%|███▎      | 67/200 [06:02<06:13,  2.81s/it][A
+ 34%|███▍      | 68/200 [06:02<04:35,  2.09s/it][A
+ 34%|███▍      | 69/200 [06:18<13:01,  5.97s/it][A
+ 35%|███▌      | 70/200 [06:19<09:52,  4.56s/it][A
+ 36%|███▌      | 71/200 [06:21<08:04,  3.76s/it][A
+ 36%|███▌      | 72/200 [06:25<08:21,  3.92s/it][A
+ 36%|███▋      | 73/200 [06:36<12:19,  5.83s/it][A
+ 37%|███▋      | 74/200 [06:52<18:27,  8.79s/it][A
+ 38%|███▊      | 75/200 [06:53<13:55,  6.68s/it][A
+ 38%|███▊      | 76/200 [06:57<11:42,  5.67s/it][A
+ 38%|███▊      | 77/200 [06:58<09:09,  4.47s/it][A
+ 39%|███▉      | 78/200 [07:14<15:58,  7.86s/it][A
+ 40%|███▉      | 79/200 [07:17<12:47,  6.34s/it][A
+ 40%|████      | 80/200 [07:19<10:23,  5.20s/it][A
+ 40%|████      | 81/200 [07:27<11:38,  5.87s/it][A
+ 41%|████      | 82/200 [07:29<09:03,  4.60s/it][A
+ 42%|████▏     | 83/200 [07:30<07:12,  3.70s/it][A
+ 42%|████▏     | 84/200 [07:30<05:06,  2.64s/it][A
+ 42%|████▎     | 85/200 [07:35<06:13,  3.25s/it][A
+ 43%|████▎     | 86/200 [07:35<04:35,  2.42s/it][A
+ 44%|████▎     | 87/200 [07:38<04:41,  2.49s/it][A
+ 44%|████▍     | 88/200 [07:43<05:49,  3.12s/it][A
+ 45%|████▌     | 90/200 [07:45<04:15,  2.32s/it][A
+ 46%|████▌     | 91/200 [07:48<04:19,  2.38s/it][A
+ 46%|████▌     | 92/200 [08:04<10:40,  5.93s/it][A
+ 46%|████▋     | 93/200 [08:20<15:21,  8.61s/it][A
+ 47%|████▋     | 94/200 [08:36<18:48, 10.65s/it][A
+ 48%|████▊     | 95/200 [08:39<15:12,  8.69s/it][A
+ 48%|████▊     | 96/200 [08:41<11:38,  6.71s/it][A
+ 48%|████▊     | 97/200 [08:45<10:02,  5.85s/it][A
+ 49%|████▉     | 98/200 [08:55<11:47,  6.94s/it][A
+ 50%|████▉     | 99/200 [08:55<08:19,  4.95s/it][A
+ 50%|█████     | 100/200 [08:56<06:15,  3.76s/it][A
+ 50%|█████     | 101/200 [08:57<05:05,  3.09s/it][A
+ 51%|█████     | 102/200 [08:58<03:41,  2.26s/it][A
+ 52%|█████▏    | 103/200 [09:00<03:29,  2.16s/it][A
+ 52%|█████▏    | 104/200 [09:00<02:50,  1.78s/it][A
+ 52%|█████▎    | 105/200 [09:05<04:21,  2.76s/it][A
+ 53%|█████▎    | 106/200 [09:21<10:27,  6.67s/it][A
+ 54%|█████▎    | 107/200 [09:27<09:53,  6.38s/it][A
+ 54%|█████▍    | 108/200 [09:34<10:13,  6.67s/it][A
+ 55%|█████▍    | 109/200 [09:43<10:50,  7.15s/it][A
+ 55%|█████▌    | 110/200 [09:44<08:05,  5.40s/it][A
+ 56%|█████▌    | 111/200 [10:00<12:39,  8.53s/it][A
+ 56%|█████▌    | 112/200 [10:04<10:41,  7.29s/it][A
+ 56%|█████▋    | 113/200 [10:12<10:44,  7.41s/it][A
+ 57%|█████▋    | 114/200 [10:12<07:32,  5.26s/it][A
+ 57%|█████▊    | 115/200 [10:14<06:14,  4.41s/it][A
+ 58%|█████▊    | 116/200 [10:30<10:59,  7.85s/it][A
+ 58%|█████▊    | 117/200 [10:35<09:36,  6.95s/it][A
+ 59%|█████▉    | 118/200 [10:51<13:10,  9.64s/it][A
+ 60%|█████▉    | 119/200 [10:51<09:12,  6.83s/it][A
+ 60%|██████    | 120/200 [10:57<08:40,  6.50s/it][A
+ 60%|██████    | 121/200 [10:58<06:13,  4.72s/it][A
+ 61%|██████    | 122/200 [10:58<04:26,  3.42s/it][A
+ 62%|██████▏   | 123/200 [10:59<03:35,  2.80s/it][A
+ 62%|██████▏   | 124/200 [11:11<06:57,  5.49s/it][A
+ 62%|██████▎   | 125/200 [11:14<05:43,  4.58s/it][A
+ 63%|██████▎   | 126/200 [11:30<09:49,  7.96s/it][A
+ 64%|██████▎   | 127/200 [11:45<12:33, 10.32s/it][A
+ 64%|██████▍   | 128/200 [11:53<11:20,  9.45s/it][A
+ 64%|██████▍   | 129/200 [11:54<08:05,  6.84s/it][A
+ 65%|██████▌   | 130/200 [12:06<10:06,  8.67s/it][A
+ 66%|██████▌   | 131/200 [12:07<07:12,  6.27s/it][A
+ 66%|██████▌   | 132/200 [12:11<06:12,  5.48s/it][A
+ 66%|██████▋   | 133/200 [12:11<04:20,  3.89s/it][A
+ 67%|██████▋   | 134/200 [12:14<03:56,  3.59s/it][A
+ 68%|██████▊   | 135/200 [12:30<07:52,  7.27s/it][A
+ 68%|██████▊   | 136/200 [12:32<06:08,  5.75s/it][A
+ 68%|██████▊   | 137/200 [12:42<07:20,  6.99s/it][A
+ 69%|██████▉   | 138/200 [12:58<09:57,  9.64s/it][A
+ 70%|██████▉   | 139/200 [13:13<11:41, 11.50s/it][A
+ 70%|███████   | 140/200 [13:14<08:18,  8.31s/it][A
+ 70%|███████   | 141/200 [13:20<07:18,  7.44s/it][A
+ 71%|███████   | 142/200 [13:28<07:24,  7.66s/it][A
+ 72%|███████▏  | 143/200 [13:30<05:50,  6.14s/it][A
+ 72%|███████▏  | 144/200 [13:32<04:30,  4.83s/it][A
+ 72%|███████▎  | 145/200 [13:33<03:23,  3.69s/it][A
+ 73%|███████▎  | 146/200 [13:37<03:20,  3.71s/it][A
+ 74%|███████▎  | 147/200 [13:38<02:36,  2.95s/it][A
+ 74%|███████▍  | 148/200 [13:54<05:55,  6.84s/it][A
+ 74%|███████▍  | 149/200 [13:55<04:10,  4.92s/it][A
+ 75%|███████▌  | 150/200 [13:56<03:11,  3.84s/it][A
+ 76%|███████▌  | 151/200 [14:12<06:05,  7.45s/it][A
+ 76%|███████▌  | 152/200 [14:15<04:58,  6.22s/it][A
+ 76%|███████▋  | 153/200 [14:31<07:07,  9.10s/it][A
+ 77%|███████▋  | 154/200 [14:47<08:31, 11.13s/it][A
+ 78%|███████▊  | 155/200 [15:03<09:24, 12.55s/it][A
+ 78%|███████▊  | 156/200 [15:17<09:32, 13.01s/it][A
+ 78%|███████▊  | 157/200 [15:24<08:06, 11.30s/it][A
+ 79%|███████▉  | 158/200 [15:25<05:39,  8.07s/it][A
+ 80%|███████▉  | 159/200 [15:40<07:06, 10.40s/it][A
+ 80%|████████  | 160/200 [15:41<04:52,  7.31s/it][A
+ 80%|████████  | 161/200 [15:44<03:56,  6.06s/it][A
+ 81%|████████  | 162/200 [15:47<03:14,  5.13s/it][A
+ 82%|████████▏ | 163/200 [16:02<05:05,  8.27s/it][A
+ 82%|████████▏ | 164/200 [16:04<03:48,  6.36s/it][A
+ 82%|████████▎ | 165/200 [16:13<04:04,  7.00s/it][A
+ 83%|████████▎ | 166/200 [16:18<03:40,  6.48s/it][A
+ 84%|████████▎ | 167/200 [16:18<02:32,  4.63s/it][A
+ 84%|████████▍ | 168/200 [16:24<02:41,  5.06s/it][A
+ 84%|████████▍ | 169/200 [16:26<02:07,  4.12s/it][A
+ 85%|████████▌ | 170/200 [16:27<01:33,  3.10s/it][A
+ 86%|████████▌ | 171/200 [16:39<02:44,  5.67s/it][A
+ 86%|████████▌ | 172/200 [16:54<04:04,  8.74s/it][A
+ 86%|████████▋ | 173/200 [17:00<03:26,  7.64s/it][A
+ 87%|████████▋ | 174/200 [17:00<02:22,  5.48s/it][A
+ 88%|████████▊ | 175/200 [17:05<02:12,  5.30s/it][A
+ 88%|████████▊ | 176/200 [17:09<01:55,  4.82s/it][A
+ 88%|████████▊ | 177/200 [17:09<01:22,  3.59s/it][A
+ 89%|████████▉ | 178/200 [17:16<01:36,  4.38s/it][A
+ 90%|████████▉ | 179/200 [17:17<01:16,  3.63s/it][A
+ 90%|█████████ | 180/200 [17:20<01:08,  3.41s/it][A
+ 90%|█████████ | 181/200 [17:30<01:39,  5.22s/it][A
+ 91%|█████████ | 182/200 [17:32<01:18,  4.34s/it][A
+ 92%|█████████▏| 183/200 [17:32<00:52,  3.10s/it][A
+ 92%|█████████▏| 184/200 [17:48<01:51,  6.95s/it][A
+ 92%|█████████▎| 185/200 [17:49<01:18,  5.22s/it][A
+ 93%|█████████▎| 186/200 [18:05<01:57,  8.43s/it][A
+ 94%|█████████▎| 187/200 [18:07<01:25,  6.55s/it][A
+ 94%|█████████▍| 188/200 [18:08<00:55,  4.62s/it][A
+ 94%|█████████▍| 189/200 [18:13<00:52,  4.80s/it][A
+ 95%|█████████▌| 190/200 [18:29<01:21,  8.13s/it][A
+ 96%|█████████▌| 192/200 [18:30<00:36,  4.58s/it][A
+ 96%|█████████▋| 193/200 [18:31<00:25,  3.70s/it][A
+ 97%|█████████▋| 194/200 [18:32<00:19,  3.20s/it][A
+ 98%|█████████▊| 195/200 [18:38<00:19,  3.90s/it][A
+ 98%|█████████▊| 196/200 [18:38<00:11,  2.86s/it][A
+ 98%|█████████▊| 197/200 [18:54<00:19,  6.58s/it][A
+ 99%|█████████▉| 198/200 [18:58<00:11,  5.78s/it][A
+100%|█████████▉| 199/200 [19:04<00:05,  5.86s/it][A
+100%|██████████| 200/200 [19:05<00:00,  4.41s/it][A100%|██████████| 200/200 [19:05<00:00,  5.73s/it]
+INFO:root:Time for 200 completions: 1145.5 seconds
+Chunking for generation: 100%|██████████| 1/1 [1:12:44<00:00, 4364.50s/it]Chunking for generation: 100%|██████████| 1/1 [1:12:44<00:00, 4364.50s/it]
+WARNING:root:precomputed_leaderboard = 'auto'. But we have found no corresponding leaderboard
+INFO:root:Evaluating the lora-llama-7b outputs.
+INFO:root:Creating the annotator from `gpt-4o-mini`.
+INFO:root:Saving annotations to `/home/c/chaoch/AlpacaEval/venv/lib/python3.12/site-packages/alpaca_eval/evaluators_configs/gpt-4o-mini/annotations_seed0_configs.json`.
+INFO:root:Loading all annotations from /home/c/chaoch/AlpacaEval/venv/lib/python3.12/site-packages/alpaca_eval/evaluators_configs/gpt-4o-mini/annotations_seed0_configs.json.
+Annotation chunk:   0%|          | 0/2 [00:00<?, ?it/s]INFO:root:Annotating 128 examples with gpt-4o-mini
+INFO:root:Using `openai_completions` on 128 prompts using gpt-4o-mini.
+INFO:root:Kwargs to completion: {'model': 'gpt-4o-mini', 'temperature': 0, 'is_chat': True}. num_procs=5
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+prompt_batches:   0%|          | 0/128 [00:00<?, ?it/s][AWARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+prompt_batches:   1%|          | 1/128 [00:01<03:09,  1.49s/it][AWARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+prompt_batches:   4%|▍         | 5/128 [00:01<00:40,  3.06it/s][AINFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+prompt_batches:   5%|▍         | 6/128 [00:02<00:38,  3.21it/s][AWARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:Using OAI client number 1 out of 1.
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:Using OAI client number 1 out of 1.
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+prompt_batches:   5%|▌         | 7/128 [00:06<02:33,  1.27s/it][AINFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:Using OAI client number 1 out of 1.
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+prompt_batches:  22%|██▏       | 28/128 [00:07<00:18,  5.45it/s][AINFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:Using OAI client number 1 out of 1.
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+
+prompt_batches:  26%|██▌       | 33/128 [00:09<00:23,  4.05it/s][AWARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+prompt_batches:  34%|███▎      | 43/128 [00:09<00:14,  6.03it/s][AWARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:Using OAI client number 1 out of 1.
+
+prompt_batches:  35%|███▌      | 45/128 [00:10<00:13,  6.02it/s][AWARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+prompt_batches:  37%|███▋      | 47/128 [00:10<00:13,  6.20it/s][AWARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+prompt_batches:  38%|███▊      | 48/128 [00:10<00:13,  6.09it/s][AWARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+prompt_batches:  38%|███▊      | 49/128 [00:11<00:16,  4.67it/s][AWARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+prompt_batches:  40%|███▉      | 51/128 [00:11<00:14,  5.25it/s][AWARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+prompt_batches:  42%|████▏     | 54/128 [00:11<00:12,  5.77it/s][AWARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:Using OAI client number 1 out of 1.
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+
+prompt_batches:  43%|████▎     | 55/128 [00:13<00:29,  2.45it/s][AWARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+prompt_batches:  52%|█████▏    | 66/128 [00:14<00:09,  6.57it/s][AWARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+prompt_batches:  53%|█████▎    | 68/128 [00:14<00:09,  6.37it/s][AINFO:root:Using OAI client number 1 out of 1.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+prompt_batches:  55%|█████▌    | 71/128 [00:14<00:08,  6.85it/s][AWARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+prompt_batches:  56%|█████▋    | 72/128 [00:15<00:08,  6.80it/s]WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+[AINFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+prompt_batches:  57%|█████▋    | 73/128 [00:15<00:11,  4.60it/s][AWARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+prompt_batches:  59%|█████▊    | 75/128 [00:16<00:12,  4.41it/s][AWARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+prompt_batches:  60%|██████    | 77/128 [00:16<00:09,  5.14it/s][AINFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+prompt_batches:  62%|██████▎   | 80/128 [00:16<00:07,  6.84it/s][AWARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+prompt_batches:  63%|██████▎   | 81/128 [00:17<00:08,  5.53it/s][AINFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+prompt_batches:  65%|██████▍   | 83/128 [00:17<00:10,  4.45it/s][AINFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+prompt_batches:  67%|██████▋   | 86/128 [00:18<00:07,  5.76it/s][AINFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+
+prompt_batches:  69%|██████▉   | 88/128 [00:18<00:05,  6.87it/s][AINFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+prompt_batches:  70%|███████   | 90/128 [00:18<00:05,  6.47it/s][AWARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+prompt_batches:  71%|███████   | 91/128 [00:18<00:06,  5.93it/s][AWARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+prompt_batches:  74%|███████▍  | 95/128 [00:19<00:04,  7.04it/s][AINFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+prompt_batches:  75%|███████▌  | 96/128 [00:19<00:04,  6.45it/s][AWARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+prompt_batches:  77%|███████▋  | 99/128 [00:19<00:03,  8.43it/s][AINFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+prompt_batches:  78%|███████▊  | 100/128 [00:19<00:04,  6.48it/s][AINFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+prompt_batches:  79%|███████▉  | 101/128 [00:20<00:05,  5.29it/s][AWARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+prompt_batches:  82%|████████▏ | 105/128 [00:20<00:03,  6.33it/s][AWARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+prompt_batches:  83%|████████▎ | 106/128 [00:20<00:03,  6.37it/s][AWARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+prompt_batches:  84%|████████▎ | 107/128 [00:21<00:03,  6.36it/s][AWARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+prompt_batches:  84%|████████▍ | 108/128 [00:21<00:03,  6.65it/s][AWARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+prompt_batches:  86%|████████▌ | 110/128 [00:21<00:03,  5.80it/s][AWARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+prompt_batches:  88%|████████▊ | 112/128 [00:22<00:02,  5.39it/s][AINFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+prompt_batches:  90%|████████▉ | 115/128 [00:22<00:01,  6.85it/s][AWARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+prompt_batches:  91%|█████████▏| 117/128 [00:24<00:04,  2.26it/s][AINFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+prompt_batches: 100%|██████████| 128/128 [00:24<00:00,  6.91it/s][Aprompt_batches: 100%|██████████| 128/128 [00:24<00:00,  5.14it/s]
+INFO:root:Completed 128 examples in 24.9 seconds.
+INFO:root:Saving all annotations to /home/c/chaoch/AlpacaEval/venv/lib/python3.12/site-packages/alpaca_eval/evaluators_configs/gpt-4o-mini/annotations_seed0_configs.json.
+INFO:root:Loading all annotations from /home/c/chaoch/AlpacaEval/venv/lib/python3.12/site-packages/alpaca_eval/evaluators_configs/gpt-4o-mini/annotations_seed0_configs.json.
+Annotation chunk:  50%|█████     | 1/2 [00:25<00:25, 25.09s/it]INFO:root:Annotating 72 examples with gpt-4o-mini
+INFO:root:Using `openai_completions` on 72 prompts using gpt-4o-mini.
+INFO:root:Kwargs to completion: {'model': 'gpt-4o-mini', 'temperature': 0, 'is_chat': True}. num_procs=5
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+
+prompt_batches:   0%|          | 0/72 [00:00<?, ?it/s][AWARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+prompt_batches:   1%|▏         | 1/72 [00:00<00:57,  1.24it/s][AINFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:Using OAI client number 1 out of 1.
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+prompt_batches:   3%|▎         | 2/72 [00:01<00:58,  1.20it/s][AINFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+prompt_batches:   8%|▊         | 6/72 [00:01<00:15,  4.29it/s][AWARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+prompt_batches:  10%|▉         | 7/72 [00:02<00:26,  2.47it/s][AWARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+prompt_batches:  18%|█▊        | 13/72 [00:03<00:09,  5.93it/s][AINFO:root:Using OAI client number 1 out of 1.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+prompt_batches:  21%|██        | 15/72 [00:03<00:09,  6.22it/s][AINFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+prompt_batches:  24%|██▎       | 17/72 [00:03<00:08,  6.11it/s][AWARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+prompt_batches:  25%|██▌       | 18/72 [00:04<00:11,  4.51it/s][AINFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+prompt_batches:  28%|██▊       | 20/72 [00:04<00:13,  3.87it/s][AWARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+prompt_batches:  33%|███▎      | 24/72 [00:05<00:08,  5.69it/s][AWARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+prompt_batches:  35%|███▍      | 25/72 [00:07<00:23,  2.03it/s][AWARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:Using OAI client number 1 out of 1.
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+
+prompt_batches:  46%|████▌     | 33/72 [00:10<00:16,  2.36it/s][AWARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+prompt_batches:  71%|███████   | 51/72 [00:11<00:03,  6.06it/s][AINFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+prompt_batches:  75%|███████▌  | 54/72 [00:11<00:02,  6.68it/s][AWARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+WARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+
+prompt_batches:  78%|███████▊  | 56/72 [00:14<00:04,  3.58it/s][AWARNING:root:/home/c/chaoch/AlpacaEval/venv/lib/python3.12/client_configs/openai_configs.yaml wasn't found. We are using environment variables to construct the client configs.This is the old and non-recommended way of doing it. Please see `client_configs/README.md` for the recommended way of specifying client configs.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:root:Using OAI client number 1 out of 1.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+prompt_batches:  94%|█████████▍| 68/72 [00:14<00:00,  6.42it/s][AINFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+prompt_batches:  97%|█████████▋| 70/72 [00:14<00:00,  6.33it/s][AINFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+prompt_batches: 100%|██████████| 72/72 [00:15<00:00,  5.19it/s][Aprompt_batches: 100%|██████████| 72/72 [00:15<00:00,  4.59it/s]
+INFO:root:Completed 72 examples in 15.7 seconds.
+INFO:root:Saving all annotations to /home/c/chaoch/AlpacaEval/venv/lib/python3.12/site-packages/alpaca_eval/evaluators_configs/gpt-4o-mini/annotations_seed0_configs.json.
+INFO:root:Loading all annotations from /home/c/chaoch/AlpacaEval/venv/lib/python3.12/site-packages/alpaca_eval/evaluators_configs/gpt-4o-mini/annotations_seed0_configs.json.
+Annotation chunk: 100%|██████████| 2/2 [00:40<00:00, 19.66s/it]Annotation chunk: 100%|██████████| 2/2 [00:40<00:00, 20.48s/it]
+WARNING:root:Length controlled win rate is very different from the raw one: 48.1% vs 70.0%. This might be a sign of failure of the GLM.
+INFO:root:Saving all results to results/gpt-4o-mini
+               length_controlled_winrate  win_rate  standard_error  n_total  avg_length
+lora-llama-7b                      48.13     70.00            3.25      200        3720

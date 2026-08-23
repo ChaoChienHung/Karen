@@ -1,0 +1,8 @@
+{"id":"json-01","prompt":"Return a JSON object with keys \"name\" and \"age\". name=Alice, age=23.\n\nJSON:","required_keys":["name","age"]}
+{"id":"json-02","prompt":"Return a JSON object with keys \"city\" and \"country\". city=Taipei, country=Taiwan.\n\nJSON:","required_keys":["city","country"]}
+{"id":"json-03","prompt":"Return a JSON object with keys \"x\" and \"y\" where x=2 and y=5.\n\nJSON:","required_keys":["x","y"]}
+{"id":"json-04","prompt":"Return a JSON object with keys \"language\" and \"creator\". language=Python, creator=Guido.\n\nJSON:","required_keys":["language","creator"]}
+{"id":"json-05","prompt":"Return a JSON object with keys \"product\" and \"price\". product=Coffee, price=4.\n\nJSON:","required_keys":["product","price"]}
+{"id":"json-06","prompt":"Return a JSON object with keys \"question\" and \"answer\". question=\"1+1=?\", answer=2.\n\nJSON:","required_keys":["question","answer"]}
+{"id":"json-07","prompt":"Return a JSON object with keys \"company\" and \"year\". company=OpenAI, year=2015.\n\nJSON:","required_keys":["company","year"]}
+{"id":"json-08","prompt":"Return a JSON object with keys \"animal\" and \"sound\". animal=cat, sound=meow.\n\nJSON:","required_keys":["animal","sound"]}
