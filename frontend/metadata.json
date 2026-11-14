@@ -1,0 +1,6 @@
+{
+  "name": "Karen",
+  "description": "A high-performance multi-LLM model output comparison platform to run, benchmark, and analyze multiple AI models simultaneously.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

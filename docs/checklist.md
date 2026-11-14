@@ -26,6 +26,7 @@
 - `llm/` 未混入靜態測資/大檔案
 - `evaluation/` 的新增內容不含敏感資訊，且可被審查（model answers/judge/logs）
 - `data/`、`model/` 仍維持大檔案不進 Git
+- `frontend/` 之 `node_modules/` 與 `dist/` 維持不進 Git，且 `npm run lint` 與 `npm run build` 通過
 
 ## 文件同步
 

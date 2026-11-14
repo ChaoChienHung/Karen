@@ -108,6 +108,21 @@ Notes:
 - Smoke test is enabled by default and writes `smoke_generations.jsonl` (disable with `--no_smoke`).
 - Exact match is enabled by default and writes `exact_match_eval.jsonl` (disable with `--no_exact_match`).
 
+---
+
+## Web Dashboard & 本地推論橋接設計取捨（Web Dashboard & Local Model Bridge）
+
+### 1. 設計動機
+Karen 先前聚焦於訓練與離線基準評估（`llm.train`、`llm.eval`），缺乏即時互動與直觀對比的視覺化介面。透過整合 Google AI Studio 下載之 Karen Web 應用，賦予專案完整的互動式遊樂場（Sandbox）、模型庫（ModelHub）與跑分榜（Leaderboard）。
+
+### 2. 架構取捨（Decoupling & SSE Proxy）
+- **關注點分離**：前端儀表板（`frontend/`）獨立為 React 19 + Express 應用，不干擾核心 `llm/` Python package。
+- **統一串流協議（SSE）**：本地推論端採用 `scripts/serve_local.py`（FastAPI + Starlette StreamingResponse），透過 Server-Sent Events（`text/event-stream`）實作逐 token 低延遲輸出。
+- **透明代理機制**：Express 後端於 `/api/compare/stream` 判斷模型前綴，當模型為 `local-*`（如 `local-karen-llama`、`local-karen-gpt2`）時，自動轉發至本地推論埠口（`127.0.0.1:8000`），對前端元件完全透明。
+- **離線與模擬支援**：本地推論伺服器提供 `--mock` 模式，在無 GPU 或未載入權重環境下亦能進行完整的前後端即時串流展示與 UI 驗證。
+
+---
+
 ## Experiment Log (Fill as you go)
 
 ### Template

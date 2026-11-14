@@ -35,8 +35,21 @@
 - `model/`：本地模型/權重快取與輸出（預設不進 Git）
 - `scripts/`：下載、叢集、benchmark recipes 與輔助腳本
 
+## Web Dashboard & Local Bridge：`frontend/` & `scripts/`
+
+- `frontend/`：React 19 + Vite + Express + Tailwind Web 儀表板
+  - `src/components/ModelHub.tsx`：模型庫與架構規格檢視
+  - `src/components/Leaderboard.tsx`：基準測試跑分排行榜
+  - `src/components/Articles.tsx`：技術手冊與 Scaling 教學
+  - `src/components/Sandbox.tsx`：多模型即時串流比較遊樂場（SSE）
+  - `server.ts`：Express 後端代理，提供 `/api/models` 與 `/api/compare/stream`（自動代理至本地 Python runner 或 Gemini API）
+- `scripts/serve_local.py`：本地模型推論橋接伺服器（FastAPI + SSE）
+  - 支援載入 `runs/<run_name>/` 訓練產物（PEFT / PyTorch）
+  - 提供即時 token 串流（相容 Karen Sandbox SSE 格式）
+
 ## Boundary Rules（必須一直成立）
 
 - `llm/` 保持「純程式」：不得混入大型靜態資料資產（離線測資/bench 產物 → `evaluation/`）
 - train/eval 的所有落地產物必須以 `runs/<run_name>/` 為中心，避免散落根目錄
 - 任何新增 arch/engine/dataset/metric 都必須能被 `python -m llm.train` / `python -m llm.eval` 覆蓋（不要新增第二套入口）
+- `frontend/` 為觀測與互動層，不干涉訓練/評估核心管線；本地模型推論透過 `scripts/serve_local.py` 進行解耦橋接

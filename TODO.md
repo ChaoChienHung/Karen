@@ -6,6 +6,7 @@
 - 同一套 dataset pipeline 共享於 pretrained fine-tune 與 scratch 小模型
 - 單一評估入口：`python -m llm.eval --run_dir runs/<run_name>`
 - 產物集中在 `runs/<run_name>/`，wandb 可選（預設關閉）
+- 互動式 Web Dashboard 與即時串流 Sandbox（`frontend/` + `scripts/serve_local.py`）整合完成，支援本地訓練產物即時推論與評測比對
 
 ## P0（先把訓練/評估流程跑順）
 
@@ -46,6 +47,7 @@
 - [ ] 擴充基準測試（挑 2–3 個先做通）
   - [ ] MMLU / GSM8K / BBH / ARC / TruthfulQA（依你想走的方向挑）
 - [ ] 自訂推論/生成腳本（可比較、可重現）
+  - [x] 整合 Karen 互動式 Web Dashboard（`frontend/`）與本機模型 SSE 串流推論服務（`scripts/serve_local.py`）
   - [ ] greedy / sampling / beam
   - [ ] decoding sweep（temperature/top-p/num_beams/max_new_tokens）與報表
 - [ ] 多 GPU 分散式訓練（先 DDP）

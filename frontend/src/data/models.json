@@ -1,0 +1,239 @@
+[
+  {
+    "id": "gemini-3.5-flash",
+    "name": "Gemini 3.5 Flash",
+    "provider": "Google",
+    "logo": "google",
+    "version": "v3.5",
+    "releaseYear": "2025",
+    "parameters": "Multimodal Native",
+    "description": "Google's next-generation flagship speed-optimized model, boasting exceptional multimodal capabilities and ultra-low latency.",
+    "strengths": [
+      "Lightning-fast response speeds",
+      "Native multimodal video and audio understanding",
+      "High accuracy on structured JSON outputs",
+      "Massive context window support"
+    ],
+    "weaknesses": [
+      "Deep mathematical multi-step reasoning",
+      "Niche competitive coding competitions"
+    ],
+    "links": {
+      "official": "https://deepmind.google/technologies/gemini/",
+      "api": "https://ai.google.dev/gemini-api/docs",
+      "paper": "https://arxiv.org/abs/2312.11805"
+    },
+    "benchmarks": {
+      "MMLU": 85.2,
+      "HumanEval": 84.1,
+      "MATH": 58.6,
+      "GPQA": 49.2
+    }
+  },
+  {
+    "id": "gemini-3.1-flash-lite",
+    "name": "Gemini 3.1 Flash Lite",
+    "provider": "Google",
+    "logo": "google",
+    "version": "v3.1",
+    "releaseYear": "2025",
+    "parameters": "Lightweight Multimodal",
+    "description": "Google's ultra-efficient, highly responsive model designed for high-frequency micro-tasks, low latency, and cost efficiency.",
+    "strengths": [
+      "Extremely low cost and high speed",
+      "Excellent for quick summarization and intent routing",
+      "Highly responsive conversational flow"
+    ],
+    "weaknesses": [
+      "Complex multi-file code generation",
+      "Hard science, engineering, or graduate-level reasoning"
+    ],
+    "links": {
+      "official": "https://deepmind.google/technologies/gemini/",
+      "api": "https://ai.google.dev/gemini-api/docs"
+    },
+    "benchmarks": {
+      "MMLU": 79.5,
+      "HumanEval": 72.8,
+      "MATH": 45.2,
+      "GPQA": 36.5
+    }
+  },
+  {
+    "id": "gpt-4o",
+    "name": "GPT-4o",
+    "provider": "OpenAI",
+    "logo": "openai",
+    "version": "o",
+    "releaseYear": "2024",
+    "parameters": "Mixture of Experts (MoE)",
+    "description": "OpenAI's flagship multimodal model, highly recognized for its conversational fluidity, rapid answers, and general reasoning breadth.",
+    "strengths": [
+      "Excellent natural conversation tone",
+      "Extremely robust instruction-following capabilities",
+      "Superb general knowledge and cross-lingual fluency"
+    ],
+    "weaknesses": [
+      "Can occasionally show formatting inconsistency",
+      "Higher latency during API traffic spikes"
+    ],
+    "links": {
+      "official": "https://openai.com/gpt-4o",
+      "api": "https://platform.openai.com/docs/guides/text-generation"
+    },
+    "benchmarks": {
+      "MMLU": 88.7,
+      "HumanEval": 90.2,
+      "MATH": 76.6,
+      "GPQA": 53.6
+    }
+  },
+  {
+    "id": "claude-3-5-sonnet",
+    "name": "Claude 3.5 Sonnet",
+    "provider": "Anthropic",
+    "logo": "anthropic",
+    "version": "v3.5",
+    "releaseYear": "2024",
+    "parameters": "Not Disclosed",
+    "description": "Anthropic's state-of-the-art model, setting global industry standards for coding, multi-step agent workflows, and highly articulate writing.",
+    "strengths": [
+      "Industry-leading code generation and logical debugging",
+      "Highly nuanced, elegant writing without corporate clichés",
+      "Incredible attention to detail in long documents"
+    ],
+    "weaknesses": [
+      "Relatively slower generation latency compared to Flash models",
+      "Slightly higher API pricing tier"
+    ],
+    "links": {
+      "official": "https://anthropic.com/claude",
+      "api": "https://docs.anthropic.com/claude/docs"
+    },
+    "benchmarks": {
+      "MMLU": 88.7,
+      "HumanEval": 92.0,
+      "MATH": 71.1,
+      "GPQA": 59.4
+    }
+  },
+  {
+    "id": "llama-3-1-405b",
+    "name": "Llama 3.1 405B",
+    "provider": "Meta",
+    "logo": "meta",
+    "version": "v3.1",
+    "releaseYear": "2024",
+    "parameters": "405 Billion",
+    "description": "Meta's flagship open-weights giant, proving that open-source models can stand toe-to-toe with the world's best proprietary offerings.",
+    "strengths": [
+      "Fully open weights supporting fine-tuning",
+      "Excellent synthetic data generation capabilities",
+      "Massive general-knowledge store across diverse domains"
+    ],
+    "weaknesses": [
+      "Enormous computing power required to run self-hosted",
+      "Slightly lower specialized agent-loop performance"
+    ],
+    "links": {
+      "official": "https://llama.meta.com",
+      "api": "https://github.com/meta-llama/llama-models",
+      "paper": "https://arxiv.org/abs/2407.21783"
+    },
+    "benchmarks": {
+      "MMLU": 88.6,
+      "HumanEval": 89.0,
+      "MATH": 73.0,
+      "GPQA": 51.1
+    }
+  },
+  {
+    "id": "deepseek-r1",
+    "name": "DeepSeek R1",
+    "provider": "DeepSeek",
+    "logo": "deepseek",
+    "version": "R1",
+    "releaseYear": "2025",
+    "parameters": "671B MoE",
+    "description": "DeepSeek's breakout reasoning model featuring advanced reinforcement-learning driven chains of thought, excels in code, math, and logic.",
+    "strengths": [
+      "Incredible mathematical derivation and step-by-step logic",
+      "First-tier programming and competitive coding ability",
+      "Transparent inner reasoning step output ('Thinking' block)"
+    ],
+    "weaknesses": [
+      "Longer initial time-to-first-token due to thinking phases",
+      "Formatting can occasionally break standard parsers"
+    ],
+    "links": {
+      "official": "https://www.deepseek.com",
+      "api": "https://api-docs.deepseek.com",
+      "paper": "https://github.com/deepseek-ai/DeepSeek-R1",
+      "github": "https://github.com/deepseek-ai/DeepSeek-R1"
+    },
+    "benchmarks": {
+      "MMLU": 90.8,
+      "HumanEval": 92.8,
+      "MATH": 93.1,
+      "GPQA": 62.1
+    }
+  },
+  {
+    "id": "local-karen-llama",
+    "name": "Karen Llama-2-7B (LoRA/SFT)",
+    "provider": "Karen",
+    "logo": "meta",
+    "version": "v1.0-lab",
+    "releaseYear": "2026",
+    "parameters": "7 Billion",
+    "description": "Llama-2-7B fine-tuned using Karen's unified training pipeline (PEFT / LoRA on Dolly-15k with response masking).",
+    "strengths": [
+      "Trained with Karen's reproducible pipeline under runs/<run_name>/",
+      "Full local inference with low latency",
+      "High instruction-following accuracy on SFT tasks",
+      "Zero cloud API dependencies or data privacy leaks"
+    ],
+    "weaknesses": [
+      "Requires local GPU memory (8-bit or 16-bit)",
+      "General knowledge bounded by 7B base weights"
+    ],
+    "links": {
+      "official": "https://github.com/meta-llama",
+      "paper": "https://arxiv.org/abs/2307.09288"
+    },
+    "benchmarks": {
+      "MMLU": 68.9,
+      "HumanEval": 62.5,
+      "MATH": 39.0,
+      "GPQA": 29.5
+    }
+  },
+  {
+    "id": "local-karen-gpt2",
+    "name": "Karen GPT-2 Dev (Scratch)",
+    "provider": "Karen",
+    "logo": "openai",
+    "version": "dev-scratch",
+    "releaseYear": "2026",
+    "parameters": "124M (8 Layers)",
+    "description": "Custom PyTorch architecture built from scratch in Karen, trained with custom training loop for rapid ablation testing.",
+    "strengths": [
+      "Ultra-fast local inference on CPU or laptop GPU",
+      "100% transparent architecture and training code",
+      "Ideal baseline for pipeline validation and ablation"
+    ],
+    "weaknesses": [
+      "Toy parameter scale (124M)",
+      "Not designed for complex multi-step reasoning"
+    ],
+    "links": {
+      "official": "https://openai.com/research/better-language-models"
+    },
+    "benchmarks": {
+      "MMLU": 34.2,
+      "HumanEval": 28.5,
+      "MATH": 18.0,
+      "GPQA": 15.2
+    }
+  }
+]

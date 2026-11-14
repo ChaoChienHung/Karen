@@ -1,0 +1,213 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-display: "Space Grotesk", sans-serif;
+}
+
+/* Elegant custom scrollbar styling for sandbox and comparison workspace */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 9999px;
+  margin: 4px;
+}
+.dark ::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.03);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.5); /* slate-400 with opacity in light mode */
+  border-radius: 9999px;
+  border: 1.5px solid transparent;
+  background-clip: padding-box;
+  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.35); /* indigo-500 with opacity in dark mode */
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.75);
+}
+
+/* Dedicated sleek sandbox scrollbar styling */
+.sandbox-scrollbar::-webkit-scrollbar {
+  height: 8px;
+  width: 6px;
+}
+.sandbox-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 9999px;
+  margin: 0 12px;
+}
+.dark .sandbox-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.04);
+}
+.sandbox-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.4);
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+.sandbox-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.85);
+}
+
+/* Custom styled range slider inputs */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: 9999px;
+  background-color: #94a3b8; /* slate-400: clear, beautiful dark gray line in daymode */
+  transition: background-color 0.15s;
+}
+
+.dark input[type="range"]::-webkit-slider-runnable-track {
+  background-color: #334155; /* slate-700 in darkmode */
+}
+
+input[type="range"]::-moz-range-track {
+  height: 6px;
+  border-radius: 9999px;
+  background-color: #94a3b8;
+  transition: background-color 0.15s;
+}
+
+.dark input[type="range"]::-moz-range-track {
+  background-color: #334155;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: -5px; /* Centers thumb on 6px track */
+  background-color: #4f46e5; /* indigo-600 */
+  height: 16px;
+  width: 16px;
+  border-radius: 9999px;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  transition: transform 0.1s, background-color 0.1s;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  background-color: #4338ca; /* indigo-700 */
+}
+
+/* Dark mode overrides for slider thumb border */
+.dark input[type="range"]::-webkit-slider-thumb {
+  border: 2px solid #1e1b4b; /* dark indigo border */
+}
+
+/* Custom styles for model output rendering and DeepSeek reasoning */
+.markdown-body {
+  font-family: var(--font-sans);
+  line-height: 1.625;
+}
+.markdown-body h1 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #f8fafc;
+}
+.markdown-body h2 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #f1f5f9;
+}
+.markdown-body h3 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: #e2e8f0;
+}
+.markdown-body p {
+  margin-bottom: 0.75rem;
+  color: #cbd5e1;
+}
+.markdown-body ul {
+  list-style-type: disc;
+  margin-bottom: 0.75rem;
+  padding-left: 1.25rem;
+  color: #cbd5e1;
+}
+.markdown-body ol {
+  list-style-type: decimal;
+  margin-bottom: 0.75rem;
+  padding-left: 1.25rem;
+  color: #cbd5e1;
+}
+.markdown-body li {
+  margin-bottom: 0.25rem;
+}
+.markdown-body pre {
+  background: #050505;
+  padding: 0.875rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.825rem;
+  margin-bottom: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.markdown-body code {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  color: #f1f5f9;
+}
+.markdown-body pre code {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  color: inherit;
+}
+.markdown-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+}
+.markdown-body th, .markdown-body td {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+.markdown-body th {
+  background-color: rgba(255, 255, 255, 0.03);
+  color: #f8fafc;
+  font-weight: 600;
+}
+.markdown-body td {
+  color: #cbd5e1;
+}
+.markdown-body blockquote {
+  border-left: 4px solid #6366f1;
+  padding-left: 1rem;
+  margin-bottom: 0.75rem;
+  font-style: italic;
+  color: #94a3b8;
+}

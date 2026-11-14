@@ -74,3 +74,26 @@ Trainer/loop 的 checkpoint/最終權重可以不同，但「可追溯的觀測�
 
 - 離線 eval set：新增到 `evaluation/eval_sets/`，並在 `docs/dev-notes.md` 記錄目的與評分方式
 - 外部 benchmark：在 `scripts/bench/` 增加 recipe，所有產物（answers/judge/logs）集中到 `evaluation/`
+
+## Web 儀表板與本地模型遊樂場（Web Dashboard & Sandbox）
+
+### 啟動前端開發伺服器
+
+```bash
+cd frontend
+npm install
+npm run dev # 啟動 Express + Vite，服務於 http://localhost:3000
+```
+
+### 連接本地模型至 Sandbox
+
+1. 啟動本地 SSE 串流服務：
+   ```bash
+   # 連接訓練產物
+   python scripts/serve_local.py --run_dir runs/<run_name> --port 8000
+   # 或以模擬模式測試前端串流
+   python scripts/serve_local.py --mock --port 8000
+   ```
+2. 在 Sandbox 介面左上角選擇 Karen 本地模型（例如 `Karen Llama-2-7B` 或 `Karen GPT-2 Dev`）。
+3. 前端後端 Express（Port 3000）會自動偵測 `local-` 模型前綴，並將 SSE 串流透明代理至 `http://127.0.0.1:8000`。
+

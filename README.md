@@ -56,6 +56,7 @@ Immutable constraints (non-regression) and collaboration guardrails live in `AGE
   - `scripts/download/` – Scripts for downloading raw datasets
   - `scripts/bench/` – External benchmark recipes (MT-Bench / AlpacaEval2)
   - `scripts/train/` – Cluster run templates (`sbatch`, `srun`)
+- `frontend/` – React/Vite web application (ModelHub, Leaderboard, Articles, Sandbox, Express server, etc.)
 - `requirements.txt` – Python dependencies for the project.  
 
 ---
@@ -253,6 +254,45 @@ External benchmarks (Tier 3) are run via external tools and saved under `evaluat
 - Model answers: `evaluation/results/model_answers/<run_name>/`
 - Judge outputs: `evaluation/results/judge/<judge_name>/`
 - Logs: `evaluation/logs/`
+
+---
+
+## 🖥️ Web Dashboard & Interactive Sandbox (`frontend/`)
+
+Karen includes a modern React + Vite + Tailwind dashboard with:
+- **ModelHub**: Explore models, architecture specs, and strengths/weaknesses.
+- **Leaderboard**: Side-by-side benchmark score rankings across MMLU, HumanEval, MATH, and GPQA.
+- **Articles**: Technical deep dives on LLM scaling, architecture trade-offs, and fine-tuning.
+- **Interactive Sandbox**: Multi-model split-view playground with real-time SSE streaming. Compare cloud models (Gemini, Claude, GPT-4o, DeepSeek) with your local Karen trained checkpoints!
+
+### Quick Start (Web Dashboard)
+
+```bash
+cd frontend
+npm install
+
+# (Optional) If you want to use Gemini API comparisons in Sandbox:
+# cp .env.example .env.local and add GEMINI_API_KEY=...
+
+# Start dev server (Express + Vite)
+npm run dev
+# The dashboard opens at http://localhost:3000
+```
+
+### Connecting Local Karen Checkpoints to Sandbox
+
+You can stream generations from your local Karen training runs (`runs/<run_name>/`) or baseline architectures directly into the Sandbox:
+
+```bash
+# 1. Start the local streaming runner (FastAPI SSE on port 8000)
+python scripts/serve_local.py --run_dir runs/<run_name>
+
+# Or start in simulation/demo mode without weights:
+python scripts/serve_local.py --mock
+
+# 2. In the Sandbox, select "Karen Llama-2-7B (LoRA/SFT)" or "Karen GPT-2 Dev (Scratch)"
+# The Express server automatically proxies the SSE stream to your local Python runner!
+```
 
 ---
 

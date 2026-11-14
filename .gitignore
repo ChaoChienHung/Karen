@@ -10,3 +10,10 @@ __pycache__
 /runs/**
 /checkpoint-1128
 /lora_out_adapter
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env*
+!frontend/.env.example
+

@@ -29,3 +29,10 @@
 
 - wandb 預設關閉；啟用必須是 opt-in（flag 或 env var）
 - 不提交任何 token/API key；若 logs/benchmark outputs 出現敏感資訊，需先清理再納入版本控制
+
+## Web Dashboard & 本地推論服務
+
+- 前端產物治理：`frontend/node_modules/` 與 `frontend/dist/` 不進 Git
+- 本地模型推論：透過 `scripts/serve_local.py` 解耦，不影響訓練/評估核心管線
+- API 密鑰防護：`frontend/.env.local` 預設被 `.gitignore` 排除，切勿將 `GEMINI_API_KEY` 等雲端金鑰 commit 進版本控制
+
