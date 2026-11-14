@@ -92,15 +92,16 @@ def load_dolly_splits(
         cache_dir=tokenizer_cache_dir,
     )
 
-    # Re-map directories to data/preprocessed/<prefix>_<tokenizer_safe>_<max_length>_<train_ratio>_<val_ratio>_<seed>
+    # Re-map directories to llm/data/preprocessed/<prefix>_<tokenizer_safe>_<max_length>_<train_ratio>_<val_ratio>_<seed>
     tokenizer_safe = tokenizer_name_or_path.replace("/", "_").replace("\\", "_")
     dataset_suffix = dataset_name.split("/")[-1]
+    dir_name = f"{dataset_suffix}_{tokenizer_safe}_{max_length}_{train_ratio}_{val_ratio}_{seed}"
     
-    preprocessed_dir = os.path.join(
-        "data", 
-        "preprocessed", 
-        f"{dataset_suffix}_{tokenizer_safe}_{max_length}_{train_ratio}_{val_ratio}_{seed}"
-    )
+    candidate_dirs = [
+        os.path.join("llm", "data", "preprocessed", dir_name),
+        os.path.join("data", "preprocessed", dir_name),
+    ]
+    preprocessed_dir = next((d for d in candidate_dirs if os.path.isdir(d)), candidate_dirs[0])
     
     train_path = os.path.join(preprocessed_dir, "train")
     val_path = os.path.join(preprocessed_dir, "val")

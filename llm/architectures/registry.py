@@ -3,14 +3,14 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any
 
-from llm.models.gpt2.config import GPT2PretrainedConfig
-from llm.models.gpt2.model import load_model as load_gpt2
-from llm.models.gpt2_dev.config import GPT2DevConfig
-from llm.models.gpt2_dev.model import build_model as build_gpt2_dev
-from llm.models.llama_2_7b.config import Llama2_7bConfig
-from llm.models.llama_2_7b.model import load_model as load_llama_2_7b
-from llm.models.llama_dev.config import LlamaDevConfig
-from llm.models.llama_dev.model import build_model as build_llama_dev
+from llm.architectures.gpt2.config import GPT2PretrainedConfig
+from llm.architectures.gpt2.model import load_model as load_gpt2
+from llm.architectures.gpt2_dev.config import GPT2DevConfig
+from llm.architectures.gpt2_dev.model import build_model as build_gpt2_dev
+from llm.architectures.llama_2_7b.config import Llama2_7bConfig
+from llm.architectures.llama_2_7b.model import load_model as load_llama_2_7b
+from llm.architectures.llama_dev.config import LlamaDevConfig
+from llm.architectures.llama_dev.model import build_model as build_llama_dev
 
 
 @dataclass(frozen=True)

@@ -22,20 +22,23 @@ def _build_arg_parser() -> argparse.ArgumentParser:
 
     p.add_argument("--dataset_name", type=str, default="databricks/databricks-dolly-15k")
     p.add_argument("--dataset_path", type=str, default=None)
-    p.add_argument("--dataset_cache_dir", type=str, default="data/hf_datasets")
-    p.add_argument("--tokenizer_cache_dir", type=str, default="model/hf_tokenizers")
-    p.add_argument("--model_cache_dir", type=str, default="model/hf_models")
+    p.add_argument("--dataset_cache_dir", type=str, default="llm/data/hf_datasets")
+    p.add_argument("--tokenizer_cache_dir", type=str, default="checkpoints/hf_tokenizers")
+    p.add_argument("--model_cache_dir", type=str, default="checkpoints/hf_models")
     p.add_argument("--max_length", type=int, default=2048)
     p.add_argument("--eval_batch_size", type=int, default=1)
     p.add_argument("--max_eval_batches", type=int, default=None)
 
-    p.add_argument("--format_eval_set", type=str, default="evaluation/eval_sets/json_format.jsonl")
+    format_set_default = "llm/data/eval_sets/json_format.jsonl" if os.path.exists("llm/data/eval_sets/json_format.jsonl") else "evaluation/eval_sets/json_format.jsonl"
+    p.add_argument("--format_eval_set", type=str, default=format_set_default)
     p.add_argument("--max_new_tokens", type=int, default=256)
 
-    p.add_argument("--exact_match_eval_set", type=str, default="evaluation/eval_sets/exact_match.jsonl")
+    exact_set_default = "llm/data/eval_sets/exact_match.jsonl" if os.path.exists("llm/data/eval_sets/exact_match.jsonl") else "evaluation/eval_sets/exact_match.jsonl"
+    p.add_argument("--exact_match_eval_set", type=str, default=exact_set_default)
     p.add_argument("--no_exact_match", action="store_true", default=False)
 
-    p.add_argument("--smoke_eval_set", type=str, default="evaluation/eval_sets/smoke_prompts.jsonl")
+    smoke_set_default = "llm/data/eval_sets/smoke_prompts.jsonl" if os.path.exists("llm/data/eval_sets/smoke_prompts.jsonl") else "evaluation/eval_sets/smoke_prompts.jsonl"
+    p.add_argument("--smoke_eval_set", type=str, default=smoke_set_default)
     p.add_argument("--smoke_max_new_tokens", type=int, default=128)
     p.add_argument("--no_smoke", action="store_true", default=False)
 
@@ -131,7 +134,7 @@ def _load_model_and_tokenizer(args):
                     model_type = json.load(f).get("model_type")
 
             if model_type == "gpt2_dev":
-                from llm.models.gpt2_dev.model import GPT2LMHeadModel
+                from llm.architectures.gpt2_dev.model import GPT2LMHeadModel
 
                 model = GPT2LMHeadModel.from_pretrained(model_dir)
                 model.to(device)
@@ -139,7 +142,7 @@ def _load_model_and_tokenizer(args):
                 return model, tokenizer
 
             if model_type == "llama_dev":
-                from llm.models.llama_dev.model import LlamaForCausalLM
+                from llm.architectures.llama_dev.model import LlamaForCausalLM
 
                 model = LlamaForCausalLM.from_pretrained(model_dir)
                 model.to(device)
@@ -159,7 +162,7 @@ def _load_model_and_tokenizer(args):
     if not args.arch:
         raise ValueError("--arch is required when --run_dir is not set")
 
-    from llm.models.registry import default_tokenizer_name as default_tokenizer_name_for_arch
+    from llm.architectures.registry import default_tokenizer_name as default_tokenizer_name_for_arch
 
     tokenizer_name = default_tokenizer_name_for_arch(args.arch, None)
     tokenizer = AutoTokenizer.from_pretrained(tokenizer_name, cache_dir=args.tokenizer_cache_dir, use_fast=args.arch.startswith("gpt2"))
@@ -178,7 +181,7 @@ def _load_model_and_tokenizer(args):
 
 
 def _compute_val_metrics(args, model, tokenizer) -> dict:
-    from llm.models.registry import default_tokenizer_name as default_tokenizer_name_for_arch
+    from llm.architectures.registry import default_tokenizer_name as default_tokenizer_name_for_arch
 
     tokenizer_name_or_path = getattr(tokenizer, "name_or_path", None)
     if not tokenizer_name_or_path:
@@ -381,8 +384,24 @@ def main(argv: list[str] | None = None) -> None:
     if not args.no_smoke:
         metrics.update(_smoke_eval(args, model, tokenizer, eval_dir))
 
+    eval_job_name = os.path.basename(os.path.normpath(args.run_dir)) if args.run_dir else f"eval_{datetime.today().strftime('%Y-%m-%d_%H-%M-%S')}"
+    job_eval_dir = os.path.join("llm", "eval", "results", eval_job_name)
+    os.makedirs(job_eval_dir, exist_ok=True)
+    os.makedirs(os.path.join(job_eval_dir, "logs"), exist_ok=True)
+    os.makedirs(os.path.join(job_eval_dir, "runs"), exist_ok=True)
+
     with open(os.path.join(eval_dir, "metrics.json"), "w", encoding="utf-8") as f:
         json.dump(metrics, f, ensure_ascii=False, indent=2)
+
+    with open(os.path.join(job_eval_dir, "metrics.json"), "w", encoding="utf-8") as f:
+        json.dump(metrics, f, ensure_ascii=False, indent=2)
+
+    # Mirror prediction records into job_eval_dir for unified job tracking
+    for fn in ["instruction_eval.jsonl", "exact_match_eval.jsonl", "smoke_generations.jsonl"]:
+        src_f = os.path.join(eval_dir, fn)
+        if os.path.exists(src_f):
+            import shutil
+            shutil.copy2(src_f, os.path.join(job_eval_dir, fn))
 
     print(eval_dir)
 

@@ -55,10 +55,10 @@ Wandb：
 * **`data/raw_data/`**（排除於 Git）：存放下載後的原始資料集檔案（如 Dolly-15k）。
 * **`data/preprocessed/`**（排除於 Git）：存放經 Tokenize 與切分後的預處理資料集快取，自動按 Tokenizer 及長度命名，實現秒級重載。
 * **`data/hf_datasets/`**（排除於 Git）：存放 Hugging Face 原始資料集快取。
-* **`model/`**（除 `.gitkeep` 外排除於 Git）：存放預訓練模型與 Tokenizer 快取，以及合併後的權重檔。
-  - `model/hf_models/`：預訓練模型快取。
-  - `model/hf_tokenizers/`：Tokenizer 快取。
-  - `model/merged/`：合併後的 LoRA 完整權重。
+* **`checkpoints/`**（除 `.gitkeep` 外排除於 Git）：存放預訓練模型與 Tokenizer 快取，以及合併後的權重檔。
+  - `checkpoints/hf_models/`：預訓練模型快取。
+  - `checkpoints/hf_tokenizers/`：Tokenizer 快取。
+  - `checkpoints/merged/`：合併後的 LoRA 完整權重。
 * **`scripts/download/`**：存放資料集下載腳本（如 `download_dolly.py`）。
 * **`scripts/train/`**：存放用於 GPU 叢集排程的 Slurm 作業腳本範本（如 `submit_sbatch.sh` 與 `run_srun.sh`）。
 

@@ -8,7 +8,7 @@ import torch.nn.functional as F
 from transformers import PretrainedConfig, PreTrainedModel
 from transformers.modeling_outputs import CausalLMOutputWithCrossAttentions
 
-from llm.models.llama_dev.config import LlamaDevConfig
+from llm.architectures.llama_dev.config import LlamaDevConfig
 
 
 class LlamaConfig(PretrainedConfig):

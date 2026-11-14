@@ -8,16 +8,16 @@
 - 典型決策點
   - 選擇模型：`--arch <arch>`
   - 選擇引擎：`--engine trainer|loop`
-  - 選擇 run 目錄：`--run_name <name>`（產物落在 `runs/<name>/`）
-  - dataset 來源：`--dataset_path ...` 或下載到 `data/raw_data/` 後再指向本地路徑
+  - 選擇 run / job 名稱：`--run_name <name>`（產物以 `runs/<name>/` 為 SSOT，並鏡像於 `llm/train/jobs/<name>/`）
+  - dataset 來源：`--dataset_path ...` 或下載到 `llm/data/raw_data/` 後再指向本地路徑
 
-### Run 產物（必須落地）
+### Run / Job 產物（必須落地）
 
-`runs/<run_name>/` 至少包含：
+`runs/<run_name>/`（與 `llm/train/jobs/<job_name>/`）至少包含：
 
 - `args.json`
 - `env.json`
-- `train.rank<RANK>.log`
+- `train.rank<RANK>.log`（位於 `logs/` 或根目錄）
 - `metrics.jsonl`
 
 Trainer/loop 的 checkpoint/最終權重可以不同，但「可追溯的觀測檔」必須一致，且 `metrics.jsonl` 為本地 SSOT。
@@ -25,7 +25,7 @@ Trainer/loop 的 checkpoint/最終權重可以不同，但「可追溯的觀測�
 ## 評估（Evaluation）
 
 - 唯一入口：`python -m llm.eval --run_dir runs/<run_name>`
-- 輸出位置：`runs/<run_name>/eval/`
+- 輸出位置：`runs/<run_name>/eval/`，並自動鏡射記錄至 `llm/eval/results/<eval_job_name>/`
   - `metrics.json`
   - `instruction_eval.jsonl`
   - `exact_match_eval.jsonl`

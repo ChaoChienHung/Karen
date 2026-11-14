@@ -7,6 +7,7 @@
 - `AGENTS.md`：不可退化約束 + 協作契約（永遠要成立）
 - `README.md`：快速上手（安裝 / 訓練 / 評估 / 產物）
 - `TODO.md`：任務清單與優先級（工作規劃入口）
+- `INSIGHT.md`：研究洞見、實驗事實、失敗分析與假設驗證（實驗結論與洞見記錄）
 
 ## docs/ Index
 
@@ -17,3 +18,4 @@
 - `docs/guardrails.md`：回歸檢查策略與常見踩雷點（如何驗證）
 - `docs/checklist.md`：變更驗收清單（PR/自我檢查）
 - `docs/dev-notes.md`：設計取捨、benchmark 規格、實驗紀錄（living doc）
+- `docs/research-notes/`：研究手冊與實證紀錄（支援 `INSIGHT.md` 引用）

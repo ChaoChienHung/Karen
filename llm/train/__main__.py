@@ -17,16 +17,16 @@ from llm.engines.loop import run_loop
 from llm.engines.trainer import run_trainer
 from llm.preprocessing.dolly import load_dolly_splits
 from llm.logging import append_jsonl, is_wandb_enabled, maybe_finish_wandb, maybe_init_wandb, setup_run_logging, utc_now_iso, write_json
-from llm.models.gpt2.config import GPT2PretrainedConfig
-from llm.models.gpt2.model import load_model as load_gpt2
-from llm.models.gpt2_dev.config import GPT2DevConfig
-from llm.models.gpt2_dev.model import build_model as build_gpt2_dev
-from llm.models.llama_2_7b.config import Llama2_7bConfig
-from llm.models.llama_2_7b.model import load_model as load_llama_2_7b
-from llm.models.llama_dev.config import LlamaDevConfig
-from llm.models.llama_dev.model import build_model as build_llama_dev
-from llm.models.registry import arches as model_arches
-from llm.models.registry import default_tokenizer_name as default_tokenizer_name_for_arch
+from llm.architectures.gpt2.config import GPT2PretrainedConfig
+from llm.architectures.gpt2.model import load_model as load_gpt2
+from llm.architectures.gpt2_dev.config import GPT2DevConfig
+from llm.architectures.gpt2_dev.model import build_model as build_gpt2_dev
+from llm.architectures.llama_2_7b.config import Llama2_7bConfig
+from llm.architectures.llama_2_7b.model import load_model as load_llama_2_7b
+from llm.architectures.llama_dev.config import LlamaDevConfig
+from llm.architectures.llama_dev.model import build_model as build_llama_dev
+from llm.architectures.registry import arches as model_arches
+from llm.architectures.registry import default_tokenizer_name as default_tokenizer_name_for_arch
 
 
 def _is_distributed() -> bool:
@@ -63,7 +63,7 @@ def _build_arg_parser() -> argparse.ArgumentParser:
     p.add_argument("--max_length", type=int, default=data_defaults.max_length)
     p.add_argument("--dataset_cache_dir", type=str, default=data_defaults.dataset_cache_dir)
     p.add_argument("--tokenizer_cache_dir", type=str, default=data_defaults.tokenizer_cache_dir)
-    p.add_argument("--model_cache_dir", type=str, default="model/hf_models")
+    p.add_argument("--model_cache_dir", type=str, default="checkpoints/hf_models")
 
     p.add_argument("--train_ratio", type=float, default=data_defaults.train_ratio)
     p.add_argument("--val_ratio", type=float, default=data_defaults.val_ratio)
@@ -215,9 +215,13 @@ def _git_commit() -> str | None:
 
 def _write_run_artifacts(*, args, out_dir: str, run_name: str, is_main_process) -> None:
     os.makedirs(out_dir, exist_ok=True)
+    logs_dir = os.path.join(out_dir, "logs")
+    os.makedirs(logs_dir, exist_ok=True)
 
+    rank = int(os.getenv("RANK", "0"))
+    log_file = os.path.join(out_dir, f"train.rank{rank}.log")
     setup_run_logging(
-        os.path.join(out_dir, f"train.rank{int(os.getenv('RANK', '0'))}.log"),
+        log_file,
         add_stream=is_main_process(),
     )
 
@@ -227,7 +231,14 @@ def _write_run_artifacts(*, args, out_dir: str, run_name: str, is_main_process) 
     if not is_main_process():
         return
 
-    write_json(os.path.join(out_dir, "args.json"), {**vars(args), "run_name": run_name, "out_dir": out_dir})
+    # Self-contained Job tracking structure under llm/train/jobs/<run_name>/
+    job_dir = os.path.join("llm", "train", "jobs", run_name)
+    os.makedirs(os.path.join(job_dir, "logs"), exist_ok=True)
+    os.makedirs(os.path.join(job_dir, "runs"), exist_ok=True)
+
+    args_payload = {**vars(args), "run_name": run_name, "out_dir": out_dir}
+    write_json(os.path.join(out_dir, "args.json"), args_payload)
+    write_json(os.path.join(job_dir, "args.json"), args_payload)
 
     env = {
         "timestamp_utc": utc_now_iso(),
@@ -244,7 +255,11 @@ def _write_run_artifacts(*, args, out_dir: str, run_name: str, is_main_process) 
         "git_commit": _git_commit(),
     }
     write_json(os.path.join(out_dir, "env.json"), env)
-    append_jsonl(os.path.join(out_dir, "metrics.jsonl"), {"ts": utc_now_iso(), "event": "run_start", "run_name": run_name})
+    write_json(os.path.join(job_dir, "env.json"), env)
+
+    start_metric = {"ts": utc_now_iso(), "event": "run_start", "run_name": run_name}
+    append_jsonl(os.path.join(out_dir, "metrics.jsonl"), start_metric)
+    append_jsonl(os.path.join(job_dir, "metrics.jsonl"), start_metric)
 
 
 def main(argv: list[str] | None = None) -> None:

@@ -1,4 +1,6 @@
 /venv
+/checkpoints/**
+!/checkpoints/**/.gitkeep
 /model/**
 !/model/**/.gitkeep
 /wandb
@@ -7,6 +9,12 @@ Assignment7.md
 __pycache__
 /data/**
 !/data/**/.gitkeep
+/llm/data/**
+!/llm/data/**/.gitkeep
+/llm/train/jobs/**
+!/llm/train/jobs/**/.gitkeep
+/llm/eval/results/**
+!/llm/eval/results/**/.gitkeep
 /runs/**
 /checkpoint-1128
 /lora_out_adapter

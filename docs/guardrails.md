@@ -22,7 +22,7 @@
 ## 資料與快取治理
 
 - `llm/` 不放靜態測資或大型資料檔
-- `data/`、`model/` 的大型快取/權重預設不進 Git
+- `data/`、`checkpoints/` 的大型快取/權重預設不進 Git
 - preprocessing cache 的命名需足以區分 tokenizer/max_length/seed/split ratios，避免快取互相污染
 
 ## Wandb / Secrets

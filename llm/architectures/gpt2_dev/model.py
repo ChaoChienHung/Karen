@@ -8,7 +8,7 @@ import torch.nn.functional as F
 from transformers import PretrainedConfig, PreTrainedModel
 from transformers.modeling_outputs import CausalLMOutputWithCrossAttentions
 
-from llm.models.gpt2_dev.config import GPT2DevConfig
+from llm.architectures.gpt2_dev.config import GPT2DevConfig
 
 
 class GPT2Config(PretrainedConfig):

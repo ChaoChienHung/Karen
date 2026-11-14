@@ -30,6 +30,7 @@ Immutable constraints (non-regression) and collaboration guardrails live in `AGE
 ## 📚 Documentation Map
 
 - `AGENTS.md` — non-negotiables + collaboration contract (what must always remain true)
+- `INSIGHT.md` — empirical research facts, experiment insights, and hypotheses
 - `docs/doc-map.md` — single index for all documents under `docs/`
 - `docs/` — workflows / architecture / guardrails / checklists / dev notes for team collaboration
 - `TODO.md` — task list and prioritization
@@ -38,24 +39,26 @@ Immutable constraints (non-regression) and collaboration guardrails live in `AGE
 
 ## 📁 Repository Structure
 
-- `llm/` – Main package (clean core for reuse as subrepository)
-  - `llm/train.py` – Unified training entry (`python -m llm.train`)
-  - `llm/eval/` – Evaluation entry (`python -m llm.eval`)
+- `llm/` – Main package (clean core for reuse as subrepository, structured similarly to `verifier/`)
+  - `llm/train/` – Unified training package (`python -m llm.train`) with Jobs abstraction
+  - `llm/eval/` – Evaluation package (`python -m llm.eval`) with Jobs abstraction
+  - `llm/data/` – Local datasets & caches (raw, preprocessed, eval sets; ignored by git except `.gitkeep`)
+  - `llm/docs/` – Submodule-specific design docs (`jobs.md`, `data.md`, `plan.md`)
   - `llm/preprocessing/` – Dataset preprocessing + tokenization
-  - `llm/models/` – Models (each model in its own folder, with its own config)
+  - `llm/architectures/` – Model architecture definitions (`llama_2_7b`, `gpt2`, `llama_dev`, `gpt2_dev`)
+  - `llm/rewards/` – Rule-based verifiable rewards for RLVR, DPO, and GRPO
   - `llm/logging.py` – Run logging utilities + optional wandb
-  - `llm/tools/` – Utilities (e.g. merge LoRA)
+  - `llm/tools/` – Utilities (e.g. merge LoRA, inspect checkpoints)
+- `checkpoints/` – Local weights and tokenizer caches (e.g. `checkpoints/hf_models/`, ignored by git except `.gitkeep`)
 - `evaluation/` – Evaluation datasets and benchmark results (tracked by Git)
   - `evaluation/eval_sets/` – Local offline evaluation question sets (JSONL)
   - `evaluation/results/` – Model outputs and judge annotations (AlpacaEval, MT-Bench)
   - `evaluation/logs/` – Stdout/stderr logs from running external benchmark CLI commands
-- `data/` – Local datasets (ignored by git, except `.gitkeep`)
-  - `data/raw_data/` – Downloaded raw datasets (e.g., Dolly-15k)
-  - `data/preprocessed/` – Cached tokenized dataset splits (generated automatically on first run)
 - `scripts/` – Helper scripts (e.g. download datasets, run cluster jobs)
   - `scripts/download/` – Scripts for downloading raw datasets
   - `scripts/bench/` – External benchmark recipes (MT-Bench / AlpacaEval2)
-  - `scripts/train/` – Cluster run templates (`sbatch`, `srun`)
+  - `scripts/train/` – Cluster run templates (`sbatch`, `srun`, DPO, GRPO)
+  - `scripts/serve_local.py` – Local SSE streaming model runner for Web Sandbox
 - `frontend/` – React/Vite web application (ModelHub, Leaderboard, Articles, Sandbox, Express server, etc.)
 - `requirements.txt` – Python dependencies for the project.  
 
@@ -92,7 +95,7 @@ Immutable constraints (non-regression) and collaboration guardrails live in `AGE
 
 4. *(Optional)* If you plan to fine-tune or evaluate the **LLaMA-2-7B** model (which requires additional PEFT, quantization, and evaluation packages), install the model-specific requirements:
    ```bash
-   pip install -r llm/models/llama_2_7b/requirements.txt
+   pip install -r llm/architectures/llama_2_7b/requirements.txt
    ```
 ### Configuration
 
@@ -107,7 +110,7 @@ python scripts/download/download_dolly.py --dataset_name databricks/databricks-d
 
 Use local dataset (optional):
 ```bash
-python -m llm.train --dataset_path data/raw_data/dolly
+python -m llm.train --dataset_path llm/data/raw_data/dolly
 ```
 
 Pretrained LLaMA (default):
@@ -198,7 +201,7 @@ Outputs:
 
 You can merge the LoRA weights into the base model for inference using:
 ```bash
-python -m llm.tools.merge_lora --adapter_dir <path-to-adapter> --output_dir model/merged
+python -m llm.tools.merge_lora --adapter_dir <path-to-adapter> --output_dir checkpoints/merged
 ```
 
 Then use the merged model for inference or deployment.

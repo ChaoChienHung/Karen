@@ -5,12 +5,12 @@ from typing import Any
 from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
 from transformers import AutoModelForCausalLM, BitsAndBytesConfig
 
-from llm.models.llama_2_7b.config import Llama2_7bConfig
+from llm.architectures.gpt2.config import GPT2PretrainedConfig
 
 
 def load_model(
     *,
-    config: Llama2_7bConfig,
+    config: GPT2PretrainedConfig,
     tokenizer,
     cache_dir: str,
     device_map: Any,

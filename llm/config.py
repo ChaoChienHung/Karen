@@ -8,8 +8,8 @@ class DataConfig:
     dataset_name: str = "databricks/databricks-dolly-15k"
     dataset_path: str | None = None
     max_length: int = 2048
-    dataset_cache_dir: str = "data/hf_datasets"
-    tokenizer_cache_dir: str = "model/hf_tokenizers"
+    dataset_cache_dir: str = "llm/data/hf_datasets"
+    tokenizer_cache_dir: str = "checkpoints/hf_tokenizers"
     train_ratio: float = 0.8
     val_ratio: float = 0.1
     seed: int = 42

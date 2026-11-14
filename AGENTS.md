@@ -9,6 +9,7 @@
 - `AGENTS.md`：不可退化約束 + 協作契約（本文件）
 - `README.md`：如何安裝/訓練/評估（面向第一次使用者）
 - `TODO.md`：任務清單與優先級（工作規劃入口）
+- `INSIGHT.md`：研究洞見、實驗事實、失敗分析與假設驗證（實驗結論與洞見記錄）
 - `docs/doc-map.md`：`docs/` 文件索引（入口頁）
 - `docs/dev-notes.md`：設計取捨、benchmark 規格、實驗紀錄（living doc）
 - `docs/`：協作手冊（workflow/規範/驗收清單/架構圖），避免把所有內容擠在 README
@@ -37,7 +38,7 @@
   - 新增指標時，需明確定義其語意（例如 masked token-weighted vs batch mean）並寫入 docs
 - 資料管線 Owner（Data Pipeline Owner）
   - 維護 dataset 介面，確保 pretrained fine-tune 與 scratch 小模型共用同一份 preprocessing contract
-  - 維護 `data/preprocessed/` cache 命名與再利用策略，避免快取污染與不可重現
+  - 維護 `llm/data/preprocessed/` cache 命名與再利用策略，避免快取污染與不可重現
 - Bench/產物治理 Owner（Benchmark & Assets Owner）
   - 維護 `evaluation/` 的離線測資、bench 產物、logs 的結構與可追溯性
   - 任何引入外部 judge/線上 API 的 recipe，需確保可重跑且產物能被審查（不含敏感資訊）
@@ -62,7 +63,7 @@
 
 - `llm/` 作為核心 Python package，避免混入大型靜態資料資產（例如離線測資 JSONL）
 - `evaluation/` 用於存放離線評估集與 benchmark 產物（model answers / judge annotations / logs），以利追溯與比較
-- `data/` 與 `model/` 下的大型快取/權重預設不進 Git（用 `.gitkeep` 保留結構即可）
+- `llm/data/` 與 `checkpoints/` 下的大型快取/權重預設不進 Git（用 `.gitkeep` 保留結構即可）
 
 ## 可追溯性（Traceability）
 
@@ -87,6 +88,7 @@
 - `AGENTS.md`：不可退化約束 + 協作契約（永遠要成立）
 - `README.md`：快速上手（安裝 / 訓練 / 評估 / 產物）
 - `TODO.md`：任務清單與優先級（工作規劃入口）
+- `INSIGHT.md`：研究洞見、實驗事實、失敗分析與假設驗證（實驗結論與洞見記錄）
 
 ### docs/ Index
 
@@ -97,6 +99,7 @@
 - `docs/guardrails.md`：回歸檢查策略與常見踩雷點（如何驗證）
 - `docs/checklist.md`：變更驗收清單（PR/自我檢查）
 - `docs/dev-notes.md`：設計取捨、benchmark 規格、實驗紀錄（living doc）
+- `docs/research-notes/`：研究手冊與實證紀錄（支援 `INSIGHT.md` 引用）
 
 ## 文檔更新指令處理模塊
 
@@ -121,7 +124,7 @@
 ### 最小驗證
 
 - 受影響文檔的路徑與引用連結已更新，且無殘留舊檔名/舊路徑
-- 根目錄僅保留 `AGENTS.md`、`README.md`、`TODO.md`；`docs/` 內文檔皆為 kebab-case
+- 根目錄僅保留 `AGENTS.md`、`README.md`、`TODO.md`、`INSIGHT.md`；`docs/` 內文檔皆為 kebab-case
 
 ## 安全與隱私
 

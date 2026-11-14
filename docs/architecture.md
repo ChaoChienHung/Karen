@@ -4,23 +4,42 @@
 
 ## Core Package：`llm/`
 
-- `llm/train.py`：單一訓練入口（`python -m llm.train`）
+- `llm/train/`：單一訓練入口套件（`python -m llm.train`）
   - 以 `--arch` 選擇模型架構，以 `--engine` 選擇訓練引擎
-  - 將「可追溯性」落在 `runs/<run_name>/`（args/env/log/metrics/checkpoints）
+  - **Jobs 抽象**：每次訓練為一個獨立 Job，產物以 `runs/<run_name>/` 為 SSOT，並鏡像鏡射至 `llm/train/jobs/<job_name>/`（包含 `runs/`、`logs/`、`args.json`、`env.json`、`metrics.jsonl`）
+- `llm/eval/`：單一評估入口套件（`python -m llm.eval --run_dir runs/<run_name>`）
+  - Tier 0/1/2 評估產物落地於 `runs/<run_name>/eval/`，並以 Job 命名鏡像儲存於 `llm/eval/results/<eval_job_name>/`（包含 `predictions.jsonl`、`metrics.json`、`logs/`、`runs/`）
+  - `calibration.py`：模型置信度與校準度評估（Brier 分數、ECE、Risk-Coverage 曲線）
+- `llm/data/`：模組專屬資料層（大型快取預設不進 Git，用 `.gitkeep` 保留）
+  - `llm/data/raw_data/`：原始資料集
+  - `llm/data/preprocessed/`：tokenized dataset 快取（由 preprocessing 自動生成）
+  - `llm/data/eval_sets/`：快速本機評估集（與 `evaluation/eval_sets/` 互為 fallback）
+- `llm/docs/`：LLM 模組內部專屬設計文檔
+  - `jobs.md`：Train 與 Eval 統一之 Jobs 抽象規範
+  - `data.md`：資料管線與快取策略契約
+  - `plan.md`：研究與實驗路線圖
 - `llm/engines/`
   - `trainer`：基於 HuggingFace Trainer（可選 LoRA/8-bit）
   - `loop`：自寫 PyTorch loop（用於 scratch 小模型與快速迭代）
-- `llm/models/`
-  - 各模型以獨立資料夾封裝（HF pretrained 或 scratch build）
+- `llm/architectures/`
+  - 各模型架構以獨立資料夾封裝（HF pretrained 或 scratch build）
   - `registry.py` 提供 `arches()` 等註冊表，讓 train/eval 兩端以相同鍵值選擇模型
 - `llm/preprocessing/`
   - Dataset preprocessing + tokenization
   - 核心原則：同一份資料管線同時服務 pretrained fine-tune 與 scratch 小模型
-  - tokenized cache 統一落在 `data/preprocessed/`（可重用、可辨識）
-- `llm/eval/`：單一評估入口（`python -m llm.eval --run_dir runs/<run_name>`）
-  - Tier 0/1/2 的離線評估與輸出落在 `runs/<run_name>/eval/`
+  - tokenized cache 統一落在 `llm/data/preprocessed/`（可重用、可辨識）
+- `llm/rewards/`：可驗證獎勵工程函數庫（RLVR / DPO / GRPO）
+  - 提供正確率（含非對稱危害矩陣）、證據引用 F1、校準度獎勵等純規則判分
 - `llm/logging.py`：run logging utilities（`metrics.jsonl` 為本地 SSOT；wandb 選配且預設關閉）
-- `llm/tools/`：工具型命令（例如 merge LoRA）
+- `llm/tools/`：工具型命令（例如 merge LoRA、inspect checkpoints）
+
+## Jobs 抽象（Unified Jobs Paradigm）
+
+專案中 `train/` 與 `eval/` 本質上合構為一個完整的 **Jobs 概念**：
+- 每個訓練或評估任務都是一個帶有唯一名稱（Job Name）的 Job
+- **Train Job**：`llm/train/jobs/<job_name>/` 擁有其對應之程式碼快照、`runs/`（權重/checkpoints）、`logs/`（如 `train.rank0.log`）、`args.json`、`env.json` 與 `metrics.jsonl`
+- **Eval Job**：`llm/eval/results/<eval_job_name>/` 擁有其 `predictions.jsonl`、`metrics.json`、`logs/` 與 `runs/`
+- 透過單一入口（CLI flags）驅動，維持各 Job 執行結果的可追溯性與可比較性
 
 ## Artifacts & Data
 
@@ -29,10 +48,8 @@
   - `evaluation/eval_sets/`：離線測資（JSONL）
   - `evaluation/results/`：外部 benchmark 的 model answers / judge annotations
   - `evaluation/logs/`：執行外部 recipes 的 stdout/stderr logs
-- `data/`：本地資料與快取（預設不進 Git）
-  - `data/raw_data/`：下載後的原始資料
-  - `data/preprocessed/`：tokenized dataset 快取（由 preprocessing 自動生成）
-- `model/`：本地模型/權重快取與輸出（預設不進 Git）
+- `llm/data/`：本地資料與快取（預設不進 Git）
+- `checkpoints/`：本地模型權重快取與輸出（`checkpoints/hf_models/`、`checkpoints/hf_tokenizers/`，預設不進 Git）
 - `scripts/`：下載、叢集、benchmark recipes 與輔助腳本
 
 ## Web Dashboard & Local Bridge：`frontend/` & `scripts/`

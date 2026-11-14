@@ -48,6 +48,8 @@
   - [ ] MMLU / GSM8K / BBH / ARC / TruthfulQA（依你想走的方向挑）
 - [ ] 自訂推論/生成腳本（可比較、可重現）
   - [x] 整合 Karen 互動式 Web Dashboard（`frontend/`）與本機模型 SSE 串流推論服務（`scripts/serve_local.py`）
+  - [x] 模型置信度與校準度評估模組（`llm/eval/calibration.py`，支援 Brier Score、ECE 與 Risk-Coverage 分析）
+  - [x] 可驗證規則獎勵函數庫（`llm/rewards/rule_rewards.py`，支援 RLVR、DPO、GRPO 對齊之客觀判分）
   - [ ] greedy / sampling / beam
   - [ ] decoding sweep（temperature/top-p/num_beams/max_new_tokens）與報表
 - [ ] 多 GPU 分散式訓練（先 DDP）
@@ -56,6 +58,11 @@
 
 ## P2（工程化與可維護）
 
+- [x] 結構重構：將存放模型權重與快取的根目錄更名為 `checkpoints/`，將定義模型結構之代碼重組為 `llm/architectures/`（完全移除舊的 `llm/models/`）
+- [x] 結構重構：將 `llm/` 依照 `verifier/` 風格重構，將資料整合至 `llm/data/`，新增 `llm/docs/`，並建立 `train/` 與 `eval/` 的 Jobs 抽象落地架構（`llm/train/jobs/<name>/` 與 `llm/eval/results/<name>/`）
+- [x] 納入 `INSIGHT.md` 作為專案研究洞見與實驗假設之標準真相來源，並建立 `docs/research-notes/` 收錄實證筆記
+- [x] 整合檢查點審計工具（`llm/tools/inspect_checkpoint.py`）
+- [x] 補充叢集排程進階強化學習範本（`scripts/train/dpo_train.sbatch`、`scripts/train/grpo_train.sbatch`）
 - [ ] 自製 tokenizer（BPE / SentencePiece）並提供與現有資料管線可切換介面
 - [ ] 新增 HuggingFace GPT2 pretrained 路徑（與 scratch GPT2 並行）
 - [ ] 新增自寫 training loop 的更多功能（lr scheduler、gradient clipping、ckpt resume、early stopping）

@@ -12,7 +12,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 def main(argv: list[str] | None = None) -> None:
     p = argparse.ArgumentParser(prog="python -m llm.tools.merge_lora")
     p.add_argument("--adapter_dir", type=str, required=True)
-    p.add_argument("--output_dir", type=str, default="cache/model/merged")
+    p.add_argument("--output_dir", type=str, default="checkpoints/merged")
     args = p.parse_args(argv)
 
     adapter_dir = args.adapter_dir
